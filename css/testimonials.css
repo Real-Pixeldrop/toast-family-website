@@ -1,0 +1,338 @@
+/* ===========================================
+   LA TOAST FAMILY - Testimonials Section
+   =========================================== */
+
+/* ===========================================
+   Testimonials Section
+   =========================================== */
+.testimonials-section {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  padding: 100px 60px;
+  overflow: hidden;
+}
+
+.testimonials-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===========================================
+   Header
+   =========================================== */
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.testimonials-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #000;
+  background: #CCFF00;
+  padding: 8px 20px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.testimonials-title {
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+.testimonials-title .filled {
+  color: #000;
+}
+
+.testimonials-title .outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================================
+   Carousel Wrapper
+   =========================================== */
+.testimonials-carousel {
+  position: relative;
+  padding: 20px 0;
+}
+
+.testimonials-track-wrapper {
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* ===========================================
+   Testimonial Cards
+   =========================================== */
+.testimonial-card {
+  flex: 0 0 calc((100% - 80px) / 3); /* 3 cards visible on desktop */
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(204, 255, 0, 0.3);
+}
+
+/* Quote Icon */
+.quote-icon {
+  width: 40px;
+  height: 40px;
+  fill: #CCFF00;
+  flex-shrink: 0;
+}
+
+/* Quote Text */
+.testimonial-quote {
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-style: italic;
+  line-height: 1.6;
+  color: #333;
+  flex-grow: 1;
+}
+
+/* Separator */
+.testimonial-separator {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Client Info */
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.client-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF6B35, #CCFF00);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.client-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.client-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.client-role {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.client-company {
+  font-size: 14px;
+  font-weight: 500;
+  color: #FF6B35;
+}
+
+/* ===========================================
+   Navigation Controls
+   =========================================== */
+.testimonials-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.testimonial-nav-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-nav-btn:hover {
+  background: #FF6B35;
+  border-color: #FF6B35;
+  transform: scale(1.05);
+}
+
+.testimonial-nav-btn:hover svg {
+  fill: white;
+}
+
+.testimonial-nav-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #000;
+  transition: fill 0.3s ease;
+}
+
+.testimonial-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.testimonial-nav-btn:disabled:hover {
+  background: white;
+  border-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1);
+}
+
+/* Dots Navigation */
+.testimonials-dots {
+  display: flex;
+  gap: 12px;
+}
+
+.testimonial-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-dot:hover {
+  background: rgba(255, 107, 53, 0.5);
+}
+
+.testimonial-dot.is-active {
+  background: #FF6B35;
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* ===========================================
+   Responsive
+   =========================================== */
+
+/* Tablet (2 cards visible) */
+@media (max-width: 1023px) {
+  .testimonials-section {
+    padding: 80px 40px;
+  }
+
+  .testimonials-header {
+    margin-bottom: 60px;
+  }
+
+  .testimonial-card {
+    flex: 0 0 calc((100% - 30px) / 2); /* 2 cards visible */
+  }
+
+  .testimonials-track {
+    gap: 30px;
+  }
+
+  .testimonials-controls {
+    margin-top: 50px;
+  }
+}
+
+/* Mobile (1 card visible) */
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 60px 20px;
+  }
+
+  .testimonials-header {
+    margin-bottom: 40px;
+  }
+
+  .testimonials-badge {
+    font-size: 10px;
+    padding: 6px 16px;
+  }
+
+  .testimonials-title {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+  .testimonial-card {
+    flex: 0 0 100%; /* 1 card visible */
+    min-height: 280px;
+    padding: 32px;
+  }
+
+  .testimonials-track {
+    gap: 20px;
+  }
+
+  .testimonial-quote {
+    font-size: clamp(15px, 2vw, 18px);
+  }
+
+  .client-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .client-name {
+    font-size: 15px;
+  }
+
+  .client-role,
+  .client-company {
+    font-size: 13px;
+  }
+
+  .testimonials-controls {
+    margin-top: 40px;
+    gap: 16px;
+  }
+
+  .testimonial-nav-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .testimonial-nav-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}

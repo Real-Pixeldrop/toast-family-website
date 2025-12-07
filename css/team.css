@@ -1,0 +1,254 @@
+/* ===========================================
+   TEAM SECTION
+   =========================================== */
+
+.team-section {
+  position: relative;
+  background: #000;
+  color: #fff;
+  padding: 120px 0;
+  overflow: visible;
+}
+
+.team-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* Photos Container - Flexbox pour 2 colonnes */
+.photos-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   GROUP LEFT - 2 Photos + Good Vibes + Doodle
+   ======================================== */
+
+.group-left {
+  position: relative;
+  flex: 1;
+  min-height: 600px;
+}
+
+/* Photo Card Wrap */
+.photo-card__wrap {
+  position: absolute;
+}
+
+/* Photo 1 - Haut droite (plus haute) */
+.photo-card__wrap.is--1 {
+  top: 82px;
+  right: 135px;
+  width: 45%;
+  z-index: 1;
+}
+
+/* Photo 2 - Bas gauche (carrée) */
+.photo-card__wrap.is--2 {
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+/* Photo Card */
+.photo-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Before pour ratio de la photo 1 (plus haute) */
+.photo-card__wrap.is--1 .photo-card__before {
+  padding-top: 128%; /* Ratio 9:7 - plus haute */
+}
+
+/* Before pour ratio de la photo 2 (carrée) */
+.photo-card__wrap.is--2 .photo-card__before {
+  padding-top: 100%; /* Ratio 1:1 - carrée */
+}
+
+/* Image de couverture */
+.cover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.cover-image.active {
+  opacity: 1;
+}
+
+/* Sticker Good Vibes - Entre les photos */
+.sticker__wrap {
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  z-index: 10;
+}
+
+.sticker__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 20px rgba(255, 107, 53, 0.5));
+}
+
+/* Doodle courbe - Part du sticker vers la droite */
+.doodle__wrap {
+  position: absolute;
+  top: 77%;
+  left: 58%;
+  transform: translateY(-50%) rotate(47deg);
+  width: 30%;
+  z-index: 9;
+}
+
+.doodle__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.9;
+  filter: brightness(0) invert(1);
+}
+
+/* ========================================
+   GROUP RIGHT - Forme verte + Photo + Poings
+   ======================================== */
+
+.group-right {
+  position: relative;
+  flex: 1;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Forme verte - Background blob */
+.blob-green__wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.blob-green__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Photo 3 - Carrée au-dessus de la forme */
+.photo-card__wrap.is--3 {
+  position: relative;
+  width: 50%;
+  z-index: 2;
+  top: 140px;
+  left: 150px;
+}
+
+.photo-card__wrap.is--3 .photo-card__before {
+  padding-top: 100%; /* Ratio 1:1 - carrée */
+}
+
+/* Sticker poings - En haut à droite de l'image */
+.sticker-poings__wrap {
+  position: absolute;
+  top: 65%;
+  right: -14%;
+  width: 21%;
+  z-index: 3;
+}
+
+.sticker-poings__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 20px rgba(75, 105, 240, 0.5));
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .photos-container {
+    gap: 60px;
+  }
+
+  .group-left,
+  .group-right {
+    min-height: 500px;
+  }
+
+  .sticker__wrap {
+    width: 28%;
+  }
+
+  .doodle__wrap {
+    width: 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-section {
+    padding: 80px 0;
+  }
+
+  .team-container {
+    padding: 0 24px;
+  }
+
+  .photos-container {
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .group-left,
+  .group-right {
+    min-height: 400px;
+    width: 100%;
+  }
+
+  .photo-card__wrap.is--1 {
+    width: 50%;
+  }
+
+  .photo-card__wrap.is--2 {
+    width: 55%;
+  }
+
+  .sticker__wrap {
+    width: 30%;
+  }
+
+  .doodle__wrap {
+    width: 35%;
+  }
+
+  .photo-card__wrap.is--3 {
+    width: 70%;
+  }
+
+  .sticker-poings__wrap {
+    width: 35%;
+    top: 5%;
+    right: -10%;
+  }
+}

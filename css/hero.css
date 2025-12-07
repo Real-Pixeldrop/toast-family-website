@@ -1,0 +1,491 @@
+/* ===========================================
+   LA TOAST FAMILY - Hero Section Styles
+   =========================================== */
+
+/* ===========================================
+   Hero Section
+   =========================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 12px 12px 6px 12px;
+}
+
+.hero-inner {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 18px);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  cursor: none;
+}
+
+/* ===========================================
+   Video Background
+   =========================================== */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2) 0%,
+    rgba(0,0,0,0) 30%,
+    rgba(0,0,0,0.1) 50%,
+    rgba(0,0,0,0.6) 100%
+  ),
+  linear-gradient(
+    135deg,
+    rgba(0,0,0,0.5) 0%,
+    rgba(0,0,0,0) 50%
+  );
+  pointer-events: none;
+}
+
+/* ===========================================
+   Navigation
+   =========================================== */
+.hero-nav {
+  position: absolute;
+  top: 20px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  cursor: auto;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-img {
+  height: 100px;
+  width: auto;
+  display: block;
+}
+
+.nav-links-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 8px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.nav-link.nav-cta {
+  background: #FF6B35;
+  color: white;
+}
+
+.nav-link.nav-cta:hover {
+  background: #E55A2B;
+  transform: scale(1.02);
+}
+
+/* ===========================================
+   Sound Toggle (follows cursor)
+   =========================================== */
+.sound-toggle {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  border: none;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.15s ease;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.sound-toggle-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.sound-toggle.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.sound-toggle:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.sound-toggle .icon-muted,
+.sound-toggle .icon-unmuted {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.sound-toggle.is-unmuted .icon-muted {
+  display: none;
+}
+
+.sound-toggle:not(.is-unmuted) .icon-unmuted {
+  display: none;
+}
+
+/* ===========================================
+   Headline
+   =========================================== */
+.hero-headline {
+  position: absolute;
+  bottom: 20px;
+  left: 28px;
+  right: 28px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.headline-text {
+  font-size: clamp(42px, 8vw, 90px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  display: block;
+  text-align: left;
+}
+
+.headline-text .filled {
+  color: white;
+}
+
+.headline-text .outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255,255,255,0.6);
+}
+
+/* Decorative elements (hidden in new layout) */
+.headline-deco {
+  display: none;
+}
+
+/* ===========================================
+   New Hero Components
+   =========================================== */
+
+/* Location Badge */
+.hero-badge {
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  width: fit-content;
+  backdrop-filter: blur(10px);
+}
+
+/* Content Wrappers */
+.headline-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+}
+
+.headline-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Bottom Content (Description + Partners) */
+.headline-bottom-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+/* Description Text */
+.headline-description {
+  font-size: clamp(14px, 1.8vw, 20px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 450px;
+}
+
+/* Partners Section */
+.headline-partners-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.partners-label {
+  display: none;
+}
+
+.partners-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.partner-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  object-fit: cover;
+  margin-right: -12px;
+}
+
+.partner-avatar:last-of-type {
+  margin-right: 0;
+}
+
+.partners-count {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.partners-count:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.partners-count svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+/* ===========================================
+   Video Controls
+   =========================================== */
+.video-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 28px;
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+  cursor: auto;
+}
+
+.control-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.8);
+}
+
+.control-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.control-btn.is-paused .icon-pause {
+  display: none;
+}
+
+.control-btn:not(.is-paused) .icon-play {
+  display: none;
+}
+
+/* ===========================================
+   Scroll Indicator
+   =========================================== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 5px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 3px;
+  z-index: 20;
+}
+
+/* ===========================================
+   Responsive
+   =========================================== */
+/* Tablet */
+@media (max-width: 1023px) {
+  .headline-wrapper {
+    max-width: 700px;
+  }
+
+  .headline-description {
+    max-width: 500px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding: 8px;
+  }
+
+  .hero-nav {
+    top: 16px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .nav-logo {
+    font-size: 18px;
+  }
+
+  .nav-links-wrapper {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+
+  .hero-headline {
+    bottom: 16px;
+    left: 20px;
+    right: 20px;
+    gap: 24px;
+  }
+
+  .headline-wrapper {
+    gap: 20px;
+  }
+
+  .headline-bottom-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .headline-description {
+    max-width: 100%;
+  }
+
+  .headline-partners-group {
+    align-items: flex-start;
+  }
+
+  .headline-text {
+    font-size: clamp(28px, 5vw, 42px);
+    letter-spacing: -1px;
+  }
+
+  .headline-text .outline {
+    -webkit-text-stroke: 1px rgba(255,255,255,0.6);
+  }
+
+  .headline-description {
+    font-size: clamp(13px, 1.5vw, 16px);
+  }
+
+  .hero-badge {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  .partner-avatar {
+    width: 32px;
+    height: 32px;
+    margin-right: -8px;
+  }
+
+  .headline-bottom-content {
+    gap: 16px;
+  }
+
+  .partners-count {
+    width: 32px;
+    height: 32px;
+  }
+
+  .partners-count svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .video-controls {
+    bottom: 16px;
+    right: 20px;
+  }
+
+  .sound-toggle {
+    width: 65px;
+    height: 65px;
+  }
+
+  .sound-toggle .icon-muted,
+  .sound-toggle .icon-unmuted {
+    width: 22px;
+    height: 22px;
+  }
+}

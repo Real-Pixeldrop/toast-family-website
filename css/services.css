@@ -1,0 +1,842 @@
+/* ===========================================
+   LA TOAST FAMILY - Services Section
+   =========================================== */
+
+.services-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===========================================
+   Services Carousel Section (Dark Version)
+   =========================================== */
+.services-carousel-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 6px 12px 12px 12px;
+}
+
+.services-carousel-inner {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 18px);
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Header */
+.services-carousel-header {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 60px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.services-carousel-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.services-carousel-title {
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.services-carousel-subtitle {
+  font-size: 15px;
+  color: #888;
+  max-width: 500px;
+  margin: 0;
+}
+
+/* Navigation Controls */
+.services-carousel-nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.services-nav-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.services-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.services-nav-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.services-view-all {
+  padding: 14px 32px;
+  background: #CCFF00;
+  color: #000;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.services-view-all:hover {
+  background: #E0FF66;
+  transform: scale(1.05);
+}
+
+/* Cards Container */
+.services-carousel-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow: visible;
+  padding: 0 60px;
+}
+
+.services-carousel-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateX(0) !important;
+}
+
+/* Service Card Dark */
+.service-card-dark {
+  flex: 0 0 calc((100% - 90px) / 4);
+  background: #111;
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  max-width: 380px;
+}
+
+.service-card-dark:hover {
+  transform: translateY(-4px);
+}
+
+/* Image */
+.service-card-dark .service-image {
+  height: 400px;
+  position: relative;
+}
+
+.service-card-dark .service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.service-card-dark .service-image .static-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.service-card-dark .service-image .gif-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.service-card-dark:hover .service-image .static-image,
+.service-card-dark.is-active .service-image .static-image {
+  opacity: 0;
+}
+
+.service-card-dark:hover .service-image .gif-image,
+.service-card-dark.is-active .service-image .gif-image {
+  opacity: 1;
+}
+
+.service-card-dark .service-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Category Badge on Dark Card */
+.service-card-dark .service-category {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 18px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #000 !important;
+  font-weight: 700;
+  border-radius: 6px;
+  z-index: 3;
+}
+
+/* Content */
+.service-card-dark .service-content {
+  padding: 32px;
+  background: #111;
+}
+
+.service-card-dark .service-meta {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.service-card-dark .service-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive - Carousel */
+@media (max-width: 1024px) {
+  .services-carousel-header {
+    padding: 0 40px 40px;
+  }
+
+  .services-carousel-wrapper {
+    padding: 0 40px;
+  }
+
+  .service-card-dark {
+    flex: 0 0 380px;
+  }
+
+  .service-card-dark .service-image {
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-carousel-section {
+    padding: 8px;
+  }
+
+  .services-carousel-inner {
+    padding: 60px 0;
+  }
+
+  .services-carousel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 20px 40px;
+  }
+
+  .services-carousel-title {
+    font-size: 36px;
+  }
+
+  .services-carousel-subtitle {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .services-carousel-nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .services-view-all {
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+
+  .services-carousel-wrapper {
+    padding: 0 20px;
+  }
+
+  .service-card-dark {
+    flex: 0 0 300px;
+  }
+
+  .service-card-dark .service-image {
+    height: 280px;
+  }
+
+  .service-card-dark .service-content {
+    padding: 24px;
+  }
+
+  .service-card-dark .service-name {
+    font-size: 26px;
+  }
+}
+
+/* ===========================================
+   Services Carousel Light Section
+   =========================================== */
+.services-carousel-light-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Light Header */
+.services-carousel-light-header {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 60px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.services-carousel-light-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.services-carousel-light-title {
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #000;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.services-carousel-light-subtitle {
+  font-size: 15px;
+  color: #666;
+  max-width: 500px;
+  margin: 0;
+}
+
+/* Light Navigation Controls */
+.services-carousel-light-nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.services-light-nav-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.services-light-nav-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.services-light-nav-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Light Cards Container */
+.services-carousel-light-wrapper {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 60px;
+}
+
+.services-carousel-light-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Service Card Light */
+.service-card-light {
+  flex: 0 0 450px;
+  background: #F8F8F8;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.service-card-light:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Image */
+.service-card-light .service-image {
+  height: 400px;
+  position: relative;
+}
+
+.service-card-light .service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.service-card-light .service-image .static-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.service-card-light .service-image .gif-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.service-card-light:hover .service-image .static-image,
+.service-card-light.is-active .service-image .static-image {
+  opacity: 0;
+}
+
+.service-card-light:hover .service-image .gif-image,
+.service-card-light.is-active .service-image .gif-image {
+  opacity: 1;
+}
+
+/* Category Badge on Light Card */
+.service-card-light .service-category {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 18px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 6px;
+  z-index: 3;
+}
+
+/* Content */
+.service-card-light .service-content {
+  padding: 32px;
+  background: #F8F8F8;
+}
+
+.service-card-light .service-meta {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.service-card-light .service-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive - Light Carousel */
+@media (max-width: 1024px) {
+  .services-carousel-light-header {
+    padding: 0 40px 40px;
+  }
+
+  .services-carousel-light-wrapper {
+    padding: 0 40px;
+  }
+
+  .service-card-light {
+    flex: 0 0 380px;
+  }
+
+  .service-card-light .service-image {
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-carousel-light-section {
+    padding: 60px 0;
+  }
+
+  .services-carousel-light-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 20px 40px;
+  }
+
+  .services-carousel-light-title {
+    font-size: 36px;
+  }
+
+  .services-carousel-light-subtitle {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .services-carousel-light-nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .services-carousel-light-wrapper {
+    padding: 0 20px;
+  }
+
+  .service-card-light {
+    flex: 0 0 300px;
+  }
+
+  .service-card-light .service-image {
+    height: 280px;
+  }
+
+  .service-card-light .service-content {
+    padding: 24px;
+  }
+
+  .service-card-light .service-name {
+    font-size: 26px;
+  }
+}
+
+/* ===========================================
+   Section Header
+   =========================================== */
+.services-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.services-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #F8F8F8;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FF6B35;
+  margin-bottom: 20px;
+}
+
+.services-title {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.services-title .filled {
+  color: #000;
+}
+
+.services-title .outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #000;
+  -webkit-text-fill-color: transparent;
+}
+
+.services-subtitle {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===========================================
+   Services Grid
+   =========================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===========================================
+   Service Card
+   =========================================== */
+.service-card {
+  position: relative;
+  background: #F8F8F8;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Container */
+.service-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: #E8E8E8;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
+
+/* Category Badge */
+.service-category {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+}
+
+/* Color variants */
+.service-card[data-color="orange"] .service-category {
+  background: rgba(255, 107, 53, 0.9);
+  color: #fff;
+}
+
+.service-card[data-color="violet"] .service-category {
+  background: rgba(201, 166, 255, 0.9);
+  color: #000;
+}
+
+.service-card[data-color="blue"] .service-category {
+  background: rgba(126, 182, 255, 0.9);
+  color: #000;
+}
+
+.service-card[data-color="lime"] .service-category {
+  background: rgba(204, 255, 0, 0.9);
+  color: #000;
+}
+
+/* Content */
+.service-content {
+  padding: 30px;
+}
+
+.service-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.service-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Features List */
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-features li {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.service-features li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #FF6B35;
+  font-weight: 600;
+}
+
+/* Hover Border Effect */
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 3px;
+  background: linear-gradient(135deg, transparent, transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.service-card[data-color="orange"]:hover::before {
+  background: linear-gradient(135deg, #FF6B35, #FF8A65);
+  opacity: 1;
+}
+
+.service-card[data-color="violet"]:hover::before {
+  background: linear-gradient(135deg, #C9A6FF, #E1C9FF);
+  opacity: 1;
+}
+
+.service-card[data-color="blue"]:hover::before {
+  background: linear-gradient(135deg, #7EB6FF, #A8D0FF);
+  opacity: 1;
+}
+
+.service-card[data-color="lime"]:hover::before {
+  background: linear-gradient(135deg, #CCFF00, #E0FF66);
+  opacity: 1;
+}
+
+/* ===========================================
+   Responsive
+   =========================================== */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 60px 20px;
+  }
+
+  .services-header {
+    margin-bottom: 50px;
+  }
+
+  .services-title {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-image {
+    height: 220px;
+  }
+
+  .service-content {
+    padding: 24px;
+  }
+
+  .service-name {
+    font-size: 24px;
+  }
+}
