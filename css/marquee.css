@@ -28,8 +28,8 @@
   height: 100px; /* Reduced height to fit within section */
   background: #111;
   overflow: hidden;
-  border-top: 2px solid rgba(204, 255, 0, 0.15);
-  border-bottom: 2px solid rgba(204, 255, 0, 0.15);
+  border-top: 2px solid rgba(255, 107, 53, 0.15);
+  border-bottom: 2px solid rgba(255, 107, 53, 0.15);
   display: flex;
   align-items: center;
   pointer-events: auto; /* Re-enable pointer events on bands */
@@ -70,7 +70,7 @@
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #CCFF00;
+  color: #FF6B35;
   white-space: nowrap;
   padding: 0 30px;
   display: inline-block;

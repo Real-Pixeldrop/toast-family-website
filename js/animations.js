@@ -229,6 +229,43 @@
   }
 
   /* ===========================================
+     5. SCROLL REVEAL BIDIRECTIONNEL
+     Apparaît au scroll down, disparaît au scroll up
+     =========================================== */
+
+  function initScrollRevealBidirectional() {
+    const revealElements = document.querySelectorAll('[data-scroll-reveal]');
+
+    if (revealElements.length === 0) {
+      console.log('No scroll reveal elements found');
+      return;
+    }
+
+    // Create observer with bidirectional behavior
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Element enters viewport - show it
+          entry.target.classList.add('is-visible');
+        } else {
+          // Element leaves viewport - hide it (bidirectional)
+          entry.target.classList.remove('is-visible');
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe all elements
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+    console.log('Scroll reveal (bidirectional) initialized on', revealElements.length, 'elements');
+  }
+
+  /* ===========================================
      INIT ALL ANIMATIONS
      =========================================== */
 
@@ -244,6 +281,7 @@
     initMagneticButtons();
     initLineDrawAnimations();
     initTextReveal();
+    initScrollRevealBidirectional();
     console.log('All micro-animations initialized');
   }
 

@@ -465,3 +465,85 @@
     display: none;
   }
 }
+
+/* ===========================================
+   SCROLL REVEAL ANIMATIONS (Bidirectional)
+   =========================================== */
+
+/* État initial - caché */
+.team [data-scroll-reveal] {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* État visible */
+.team [data-scroll-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Délais staggerés pour les cartes */
+.team [data-scroll-reveal][data-delay="1"] {
+  transition-delay: 0.1s;
+}
+
+.team [data-scroll-reveal][data-delay="2"] {
+  transition-delay: 0.2s;
+}
+
+.team [data-scroll-reveal][data-delay="3"] {
+  transition-delay: 0.3s;
+}
+
+.team [data-scroll-reveal][data-delay="4"] {
+  transition-delay: 0.4s;
+}
+
+.team [data-scroll-reveal][data-delay="5"] {
+  transition-delay: 0.5s;
+}
+
+.team [data-scroll-reveal][data-delay="6"] {
+  transition-delay: 0.6s;
+}
+
+.team [data-scroll-reveal][data-delay="7"] {
+  transition-delay: 0.7s;
+}
+
+/* Animation spéciale pour les stickers - pop + rotation */
+.team [data-scroll-reveal="sticker"] {
+  opacity: 0;
+  transform: scale(0.5) rotate(-15deg);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.team [data-scroll-reveal="sticker"].is-visible {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* Animation spéciale pour les blobs - scale */
+.team [data-scroll-reveal="blob"] {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.team [data-scroll-reveal="blob"].is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Animation pour le titre */
+.team [data-scroll-reveal="title"] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.team [data-scroll-reveal="title"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

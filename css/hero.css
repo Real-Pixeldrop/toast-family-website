@@ -3,6 +3,40 @@
    =========================================== */
 
 /* ===========================================
+   Hero Load Animations
+   =========================================== */
+@keyframes heroFadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===========================================
    Hero Section
    =========================================== */
 .hero {
@@ -70,6 +104,9 @@
 .nav-logo {
   display: flex;
   align-items: center;
+  opacity: 0;
+  animation: heroFadeInDown 0.6s ease forwards;
+  animation-delay: 0.1s;
 }
 
 .nav-logo-img {
@@ -86,6 +123,9 @@
   padding: 8px;
   border-radius: 50px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: heroFadeInDown 0.6s ease forwards;
+  animation-delay: 0.2s;
 }
 
 .nav-link {
@@ -238,6 +278,9 @@
   letter-spacing: -2px;
   display: block;
   text-align: left;
+  opacity: 0;
+  animation: heroFadeInUp 0.8s ease forwards;
+  animation-delay: 0.4s;
 }
 
 .headline-text .filled {
@@ -270,6 +313,9 @@
   border-radius: 20px;
   width: fit-content;
   backdrop-filter: blur(10px);
+  opacity: 0;
+  animation: heroFadeInUp 0.6s ease forwards;
+  animation-delay: 0.3s;
 }
 
 /* Content Wrappers */
@@ -301,6 +347,9 @@
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
   max-width: 450px;
+  opacity: 0;
+  animation: heroFadeInUp 0.6s ease forwards;
+  animation-delay: 0.6s;
 }
 
 /* Partners Section */
@@ -370,6 +419,9 @@
   gap: 10px;
   z-index: 20;
   cursor: auto;
+  opacity: 0;
+  animation: heroFadeIn 0.6s ease forwards;
+  animation-delay: 0.8s;
 }
 
 .control-btn {
@@ -418,6 +470,9 @@
   background: rgba(255,255,255,0.5);
   border-radius: 3px;
   z-index: 20;
+  opacity: 0;
+  animation: heroFadeIn 0.6s ease forwards;
+  animation-delay: 1s;
 }
 
 /* ===========================================
