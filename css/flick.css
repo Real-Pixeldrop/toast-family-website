@@ -1,0 +1,426 @@
+/* ===========================================
+   FLICK SECTION - Carousel de cartes draggable
+   Style Truus Exact
+   =========================================== */
+
+/* ------------------------- Variables -------------------------------------------------- */
+
+:root {
+  --animation-ease: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  --animation-default-fast: 0.25s ease;
+  --animation-bounce-fast: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ------------------------- Flick Section -------------------------------------------------- */
+
+.flick {
+  padding-top: var(--section-padding, 12em);
+  padding-bottom: var(--section-padding, 12em);
+  background-color: var(--color-dark, black);
+  color: var(--color-light, #f0ebe6);
+  overflow: hidden;
+}
+
+.flick__row-slider {
+  justify-content: center;
+  display: flex;
+}
+
+.flick-group {
+  grid-column-gap: 1.5em;
+  grid-row-gap: 1.5em;
+  flex-flow: column;
+  display: flex;
+  position: relative;
+}
+
+.flick-group__top {
+  position: relative;
+}
+
+.flick-group__collection {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flick-group__list {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.flick-group__item {
+  position: absolute;
+  transition: var(--animation-bounce-fast);
+}
+
+.relative-object {
+  opacity: 0;
+  pointer-events: none;
+  width: 47em;
+  position: relative;
+}
+
+.relative-object__before {
+  padding-top: 75%;
+}
+
+/* ------------------------- Flick Card -------------------------------------------------- */
+
+.flick-card {
+  border-radius: var(--border-radius-l, 1.25em);
+  background-color: var(--color-dark, black);
+  -webkit-user-select: none;
+  user-select: none;
+  width: 23.75em;
+  position: relative;
+}
+
+.flick-card__before {
+  padding-top: 150%;
+}
+
+.flick-card__media {
+  border-radius: var(--border-radius-l, 1.25em);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: opacity var(--animation-ease);
+  opacity: 0.5;
+}
+
+.flick-card__border {
+  border: .375em solid var(--color-light, #f0ebe6);
+  border-radius: var(--border-radius-l, 1.25em);
+  pointer-events: none;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+
+/* ------------------------- Tag on Cards -------------------------------------------------- */
+
+.flick-card__tag {
+  text-align: center;
+  justify-content: flex-start;
+  display: flex;
+  position: absolute;
+  top: 1.5em;
+  left: 1.5em;
+  right: 1.5em;
+}
+
+.flick-card__tag.is--big {
+  justify-content: center;
+  top: auto;
+  bottom: 0%;
+  transform: translateY(50%);
+}
+
+.flick-card__tag .tag {
+  transition: opacity var(--animation-default-fast), transform var(--animation-bounce-fast);
+  opacity: 0;
+  transform: translate(25%, 100%) rotate(10deg);
+  transform-origin: right bottom;
+}
+
+/* ------------------------- Type Badge -------------------------------------------------- */
+
+.type {
+  grid-column-gap: .25em;
+  grid-row-gap: .25em;
+  border: .125em solid var(--color-dark, black);
+  border-radius: var(--border-radius-s, .5em);
+  background-color: var(--color-light, #f0ebe6);
+  color: var(--color-dark, black);
+  justify-content: center;
+  align-items: center;
+  padding: .625em 1em .625em .75em;
+  display: flex;
+}
+
+.flick-group__type {
+  display: flex;
+  position: absolute;
+  top: 17.5%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.flick-group__type .type {
+  transition: opacity var(--animation-default-fast), transform var(--animation-bounce-fast);
+  opacity: 0;
+  transform: translate(-50%, 25%) rotate(-15deg);
+  transform-origin: left top;
+}
+
+.type__span {
+  letter-spacing: -.02em;
+  text-transform: lowercase;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.type__icon {
+  justify-content: center;
+  align-items: center;
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  position: relative;
+}
+
+.type__icon-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------------- Sticker on Cards -------------------------------------------------- */
+
+.flick-group__sticker {
+  width: 6.25em;
+  position: absolute;
+  top: 75%;
+  left: 3%;
+  transform: translate(-50%, -50%) rotate(-10deg);
+}
+
+.flick-group__sticker .sticker {
+  transition: opacity var(--animation-default-fast), transform var(--animation-bounce-fast);
+  opacity: 0;
+  transform: translate(0%, 25%) scale(0) rotate(15deg);
+}
+
+.sticker {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.sticker__svg {
+  width: 100%;
+  max-width: none;
+  display: block;
+  position: relative;
+}
+
+/* ------------------------- Blobs & Scribbles -------------------------------------------------- */
+
+.flick-group__blob-back-svg {
+  pointer-events: none;
+  width: 28.125em;
+  position: absolute;
+  top: 72%;
+  left: 79%;
+  transform: translate(-50%, -50%);
+}
+
+.flick-group__blob-scribble-svg {
+  pointer-events: none;
+  width: 6.75em;
+  position: absolute;
+  top: 19%;
+  left: -7%;
+  transform: translate(-50%, -50%);
+  color: var(--color-light, #f0ebe6);
+}
+
+/* ------------------------- Bottom Info -------------------------------------------------- */
+
+.flick-group__bottom {
+  justify-content: center;
+  display: flex;
+}
+
+.flick-info-item {
+  color: unset;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+}
+
+.flick-info-item__top {
+  text-align: center;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 5em;
+  display: flex;
+}
+
+.flick-info-item__h3 {
+  text-wrap: balance;
+  font-size: 2em;
+  margin: 0;
+}
+
+.flick-info-item__bottom {
+  flex: none;
+}
+
+.link-cta {
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.25em;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.link-cta:hover {
+  opacity: 0.7;
+}
+
+/* ------------------------- Active State Styles -------------------------------------------------- */
+
+[data-flick-cards-item-status="active"] .flick-card__media {
+  opacity: 1;
+}
+
+[data-flick-cards-item-status="active"] .flick-card__tag .tag {
+  opacity: 1;
+  transform: translate(0%, 0%) rotate(0.001deg);
+}
+
+[data-flick-cards-item-status="active"] .flick-group__type .type {
+  opacity: 1;
+  transform: translate(0%, 0%) rotate(0.001deg);
+}
+
+[data-flick-cards-item-status="active"] .flick-group__sticker .sticker {
+  opacity: 1;
+  transform: translate(0%, 0%) scale(1) rotate(0.001deg);
+}
+
+/* Before/After states opacity */
+[data-flick-cards-item-status="3-before"] .flick-card__media,
+[data-flick-cards-item-status="3-after"] .flick-card__media {
+  opacity: 0.35;
+}
+
+/* ------------------------- Dragger -------------------------------------------------- */
+
+.flick-group__dragger {
+  z-index: 100;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: pan-y;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: grab;
+}
+
+[data-flick-drag-status="grabbing"] .flick-group__dragger {
+  cursor: grabbing;
+}
+
+/* ------------------------- RESPONSIVE -------------------------------------------------- */
+
+@media screen and (max-width: 991px) {
+  .flick-card {
+    width: 18em;
+  }
+
+  .relative-object {
+    width: 36em;
+  }
+
+  .flick-group__blob-back-svg {
+    width: 22em;
+  }
+
+  .flick-group__blob-scribble-svg {
+    width: 5em;
+  }
+
+  .flick-group__sticker {
+    width: 5em;
+  }
+
+  .flick-info-item__h3 {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .flick {
+    padding-top: var(--section-padding, 6em);
+    padding-bottom: var(--section-padding, 6em);
+  }
+
+  .flick-card {
+    width: 14em;
+  }
+
+  .relative-object {
+    width: 28em;
+  }
+
+  .flick-group__blob-back-svg {
+    width: 16em;
+  }
+
+  .flick-group__blob-scribble-svg {
+    width: 4em;
+    left: -5%;
+  }
+
+  .flick-group__sticker {
+    width: 4em;
+  }
+
+  .flick-group__type {
+    display: none;
+  }
+
+  .flick-info-item__h3 {
+    font-size: 1.25em;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .flick-card {
+    width: 11em;
+  }
+
+  .relative-object {
+    width: 22em;
+  }
+
+  .flick-group__blob-back-svg {
+    width: 12em;
+  }
+
+  .flick-group__blob-scribble-svg {
+    display: none;
+  }
+
+  .flick-group__sticker {
+    width: 3em;
+  }
+
+  .flick-info-item__h3 {
+    font-size: 1em;
+  }
+}

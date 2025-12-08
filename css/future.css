@@ -11,7 +11,7 @@
 /* ------------------------- Future Section -------------------------------------------------- */
 
 .future {
-  padding-top: .5em;
+  padding-top: 6em;
   padding-bottom: var(--section-padding, 12em);
   overflow: clip;
   background-color: var(--color-light, #f0ebe6);
