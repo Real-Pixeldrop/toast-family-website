@@ -1,254 +1,466 @@
 /* ===========================================
-   TEAM SECTION
+   TEAM SECTION - Style Truus Exact
+   Copié depuis trus copie/css2.css (lignes 4071-4278)
    =========================================== */
 
-.team-section {
-  position: relative;
-  background: #000;
-  color: #fff;
-  padding: 120px 0;
-  overflow: visible;
+/* ------------------------- Variables -------------------------------------------------- */
+
+:root {
+  /* Sizing */
+  --border-radius: 1.25em;
+  --border-radius-l: 1.25em;
+  --border-radius-m: .75em;
+  --border-radius-s: .5em;
+  --section-padding: 12em;
+  --container-padding-l: 6.75em;
+
+  /* Colors */
+  --color-light: #f0ebe6;
+  --color-dark: black;
+  --color-darkgrey: #1a1a1a;
+  --color-orange: #f5693c;
+  --color-pink: #f0befa;
+  --color-blue: #4B69F0;
+  --color-green: #2d7864;
 }
 
-.team-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 60px;
+@media screen and (max-width: 767px) {
+  :root {
+    --section-padding: 6em;
+    --container-padding-l: 1.25em;
+  }
 }
 
-/* Photos Container - Flexbox pour 2 colonnes */
-.photos-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* ------------------------- Container -------------------------------------------------- */
+
+.container {
+  max-width: 1440px;
+  padding-right: 2.5em;
+  padding-left: 2.5em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* ========================================
-   GROUP LEFT - 2 Photos + Good Vibes + Doodle
-   ======================================== */
-
-.group-left {
-  position: relative;
-  flex: 1;
-  min-height: 600px;
+.container.is--large {
+  padding-right: var(--container-padding-l);
+  padding-left: var(--container-padding-l);
 }
 
-/* Photo Card Wrap */
-.photo-card__wrap {
-  position: absolute;
-}
+/* ------------------------- Team Section -------------------------------------------------- */
 
-/* Photo 1 - Haut droite (plus haute) */
-.photo-card__wrap.is--1 {
-  top: 82px;
-  right: 135px;
-  width: 45%;
-  z-index: 1;
-}
-
-/* Photo 2 - Bas gauche (carrée) */
-.photo-card__wrap.is--2 {
-  bottom: 0;
-  left: 0;
-  width: 50%;
-  z-index: 2;
-}
-
-/* Photo Card */
-.photo-card {
-  position: relative;
-  border-radius: 20px;
+.team {
+  padding-top: 1em;
+  padding-bottom: var(--section-padding);
+  background-color: var(--color-dark);
+  color: var(--color-light);
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Before pour ratio de la photo 1 (plus haute) */
-.photo-card__wrap.is--1 .photo-card__before {
-  padding-top: 128%; /* Ratio 9:7 - plus haute */
+.team__row-text {
+  flex-flow: column;
+  align-items: center;
+  padding-bottom: 12em;
+  display: flex;
 }
 
-/* Before pour ratio de la photo 2 (carrée) */
-.photo-card__wrap.is--2 .photo-card__before {
-  padding-top: 100%; /* Ratio 1:1 - carrée */
+.team__col-text {
+  text-align: center;
+  max-width: 64em;
 }
 
-/* Image de couverture */
-.cover-image {
+.team__col-text h2 {
+  font-size: 4em;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+}
+
+.team__col-text h2 em {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.is--text-balance {
+  text-wrap: balance;
+}
+
+.is--relative {
+  position: relative;
+}
+
+.is--inline-block {
+  display: inline-block;
+}
+
+/* ------------------------- Team Grid -------------------------------------------------- */
+
+.team__grid {
+  width: 100%;
+  position: relative;
+  transform: scale(0.9);
+  transform-origin: center top;
+}
+
+.team__grid-before {
+  padding-top: 135%;
+}
+
+/* ------------------------- Team Card Wrap (Positions) -------------------------------------------------- */
+
+.team-card__wrap {
+  width: 19.1875em;
+  position: absolute;
+  top: 0%;
+  left: 14.3%;
+}
+
+.team-card__wrap.is--2 {
+  top: 18.6%;
+  left: 0%;
+}
+
+.team-card__wrap.is--3 {
+  top: 8.8%;
+  left: auto;
+  right: 0%;
+}
+
+.team-card__wrap.is--4 {
+  top: 34.7%;
+  left: 45.8%;
+}
+
+.team-card__wrap.is--5 {
+  top: 48%;
+  left: 65.1%;
+}
+
+.team-card__wrap.is--6 {
+  top: 55.3%;
+  left: 8%;
+}
+
+.team-card__wrap.is--7 {
+  top: auto;
+  bottom: 0%;
+  left: 54%;
+}
+
+/* ------------------------- Team Card -------------------------------------------------- */
+
+.team-card {
+  border-radius: var(--border-radius-l);
+  background-color: var(--color-darkgrey);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card__target, .team-card__remove, .cover {
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.before__125 {
+  padding-top: 125%;
+}
+
+.before__100 {
+  padding-top: 100%;
+}
+
+/* ------------------------- Cover Image -------------------------------------------------- */
+
+.cover-image {
+  object-fit: cover;
+  -webkit-user-select: none;
+  user-select: none;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.cover-image.active {
-  opacity: 1;
-}
-
-/* Sticker Good Vibes - Entre les photos */
-.sticker__wrap {
   position: absolute;
-  top: 67%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 25%;
-  z-index: 10;
+  top: 0;
+  left: 0;
 }
 
-.sticker__svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 8px 20px rgba(255, 107, 53, 0.5));
-}
+/* ------------------------- Blobs -------------------------------------------------- */
 
-/* Doodle courbe - Part du sticker vers la droite */
-.doodle__wrap {
+.team-grid__blob-1 {
+  width: 27.25em;
   position: absolute;
-  top: 77%;
-  left: 58%;
-  transform: translateY(-50%) rotate(47deg);
-  width: 30%;
-  z-index: 9;
+  top: -6.2%;
+  left: 55%;
+  pointer-events: none;
 }
 
-.doodle__svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  opacity: 0.9;
+.team-grid__blob-2 {
+  width: 26.75em;
+  position: absolute;
+  top: 57.7%;
+  left: -8%;
+  pointer-events: none;
+}
+
+/* ------------------------- Stickers -------------------------------------------------- */
+
+.team-grid__sticker-1 {
+  z-index: 5;
+  position: absolute;
+  top: 19%;
+  left: 19.5%;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.team-grid__sticker-1-svg {
+  width: 10.375em;
+  position: relative;
+}
+
+.team-grid__sticker-2 {
+  z-index: 5;
+  position: absolute;
+  top: 16%;
+  right: -4%;
+  pointer-events: none;
+}
+
+.team-grid__sticker-2-svg {
+  width: 8.6875em;
+  position: relative;
+}
+
+.team-grid__sticker-3 {
+  z-index: 5;
+  position: absolute;
+  top: 49%;
+  left: 60%;
+  pointer-events: none;
+}
+
+.team-grid__sticker-3-svg {
+  width: 5.875em;
+  position: relative;
+}
+
+.team-grid__sticker-4 {
+  z-index: 5;
+  position: absolute;
+  top: 61%;
+  left: 1%;
+  pointer-events: none;
+}
+
+.team-grid__sticker-4-svg {
+  width: 8.5em;
+  position: relative;
+}
+
+.team-grid__sticker-5 {
+  z-index: 5;
+  position: absolute;
+  bottom: -1%;
+  left: 69%;
+  pointer-events: none;
+}
+
+.team-grid__sticker-5-svg {
+  width: 11.5625em;
+  position: relative;
+}
+
+/* ------------------------- Lines -------------------------------------------------- */
+
+.team-grid__line-1-svg {
+  z-index: 5;
+  width: 17.625em;
+  position: absolute;
+  top: 23%;
+  left: 26%;
+  transform: rotate(30deg);
+  pointer-events: none;
   filter: brightness(0) invert(1);
 }
 
-/* ========================================
-   GROUP RIGHT - Forme verte + Photo + Poings
-   ======================================== */
-
-.group-right {
-  position: relative;
-  flex: 1;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Forme verte - Background blob */
-.blob-green__wrap {
+.team-grid__line-2-svg {
+  z-index: 5;
+  width: 7.1875em;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  z-index: 1;
-  opacity: 0.9;
+  top: 77%;
+  left: 32%;
+  transform: rotate(98deg);
+  pointer-events: none;
 }
 
-.blob-green__svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+/* ------------------------- Image Cycle Animation -------------------------------------------------- */
 
-/* Photo 3 - Carrée au-dessus de la forme */
-.photo-card__wrap.is--3 {
-  position: relative;
-  width: 50%;
-  z-index: 2;
-  top: 140px;
-  left: 150px;
-}
-
-.photo-card__wrap.is--3 .photo-card__before {
-  padding-top: 100%; /* Ratio 1:1 - carrée */
-}
-
-/* Sticker poings - En haut à droite de l'image */
-.sticker-poings__wrap {
-  position: absolute;
-  top: 65%;
-  right: -14%;
-  width: 21%;
+[data-image-cycle-item="active"] {
+  transition: opacity 0.5s ease 0s, visibility 0s ease 0s;
+  opacity: 1;
+  visibility: visible;
   z-index: 3;
 }
 
-.sticker-poings__svg {
+[data-image-cycle-item="previous"] {
+  transition: opacity 0.5s ease 0.5s, visibility 0s ease 0.5s;
+  opacity: 0;
+  visibility: visible;
+  z-index: 2;
+}
+
+[data-image-cycle-item="not-active"] {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+/* ------------------------- Circle & Line SVG in Title -------------------------------------------------- */
+
+.team__h2-circle-svg {
   width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 8px 20px rgba(75, 105, 240, 0.5));
+  position: absolute;
+  top: 55%;
+  left: 44%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .photos-container {
-    gap: 60px;
+.team__h2-line-svg {
+  width: 100%;
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* ------------------------- RESPONSIVE -------------------------------------------------- */
+
+@media screen and (max-width: 991px) {
+  .team-card__wrap {
+    width: 16em;
   }
 
-  .group-left,
-  .group-right {
-    min-height: 500px;
+  .team-grid__blob-1 {
+    width: 22em;
   }
 
-  .sticker__wrap {
-    width: 28%;
+  .team-grid__blob-2 {
+    width: 22em;
   }
 
-  .doodle__wrap {
-    width: 35%;
+  .team-grid__sticker-1-svg {
+    width: 8em;
+  }
+
+  .team-grid__sticker-2-svg {
+    width: 7em;
+  }
+
+  .team-grid__sticker-3-svg {
+    width: 5em;
+  }
+
+  .team-grid__sticker-4-svg {
+    width: 7em;
+  }
+
+  .team-grid__sticker-5-svg {
+    width: 9em;
+  }
+
+  .team__row-text {
+    padding-bottom: 8em;
+  }
+
+  .team__col-text h2 {
+    font-size: 3em;
+  }
+
+  .container.is--large {
+    padding-right: 3.75em;
+    padding-left: 3.75em;
   }
 }
 
-@media (max-width: 768px) {
-  .team-section {
-    padding: 80px 0;
+@media screen and (max-width: 767px) {
+  .team-card__wrap {
+    width: 12em;
   }
 
-  .team-container {
-    padding: 0 24px;
+  .team-grid__blob-1 {
+    width: 16em;
   }
 
-  .photos-container {
-    flex-direction: column;
-    gap: 80px;
+  .team-grid__blob-2 {
+    width: 16em;
   }
 
-  .group-left,
-  .group-right {
-    min-height: 400px;
-    width: 100%;
+  .team-grid__sticker-1-svg {
+    width: 6em;
   }
 
-  .photo-card__wrap.is--1 {
-    width: 50%;
+  .team-grid__sticker-2-svg {
+    width: 5em;
   }
 
-  .photo-card__wrap.is--2 {
-    width: 55%;
+  .team-grid__sticker-3-svg {
+    width: 4em;
   }
 
-  .sticker__wrap {
-    width: 30%;
+  .team-grid__sticker-4-svg {
+    width: 5em;
   }
 
-  .doodle__wrap {
-    width: 35%;
+  .team-grid__sticker-5-svg {
+    width: 7em;
   }
 
-  .photo-card__wrap.is--3 {
-    width: 70%;
+  .team__row-text {
+    padding-bottom: 5em;
   }
 
-  .sticker-poings__wrap {
-    width: 35%;
-    top: 5%;
-    right: -10%;
+  .team__col-text h2 {
+    font-size: 2em;
+  }
+
+  .team-grid__line-1-svg {
+    width: 12em;
+  }
+
+  .team-grid__line-2-svg {
+    width: 5em;
+  }
+
+  .container.is--large {
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .team-card__wrap {
+    width: 9em;
+  }
+
+  .team-grid__blob-1 {
+    width: 12em;
+  }
+
+  .team-grid__blob-2 {
+    width: 12em;
+  }
+
+  .team-grid__sticker-1,
+  .team-grid__sticker-2,
+  .team-grid__sticker-3,
+  .team-grid__sticker-4,
+  .team-grid__sticker-5,
+  .team-grid__line-1-svg,
+  .team-grid__line-2-svg {
+    display: none;
   }
 }

@@ -553,69 +553,187 @@
   </section>
 
   <!-- ===========================================
-       TEAM SECTION
+       TEAM SECTION (Style Truus - Team Grid)
        =========================================== -->
-  <section class="team-section">
-    <div class="team-container">
+  <section data-bg-section="dark" data-theme-section="dark" class="team">
+    <div class="container is--large">
 
-      <div class="photos-container">
-
-        <!-- GROUP 1 : Photos gauche + Good Vibes + Doodle -->
-        <div class="group-left">
-          <!-- Photo 1 : Haut droite - Rotation 3 images -->
-          <div class="photo-card__wrap is--1" data-image-cycle="top">
-            <div class="photo-card">
-              <div class="photo-card__before"></div>
-              <img src="morgane.png" alt="Team" class="cover-image active">
-              <img src="LA TOAST FAMILY 🍞 (@latoastfamily) • Photos et vidéos Instagram/imgi_23_497923509_1217180613447118_7825595915355586152_n.jpg" alt="Team" class="cover-image">
-              <img src="LA TOAST FAMILY 🍞 (@latoastfamily) • Photos et vidéos Instagram/imgi_45_497598643_1038033757760986_4227295647880197490_n.jpg" alt="Team" class="cover-image">
-            </div>
-          </div>
-
-          <!-- Photo 2 : Bas gauche - Rotation 3 images -->
-          <div class="photo-card__wrap is--2" data-image-cycle="bottom">
-            <div class="photo-card">
-              <div class="photo-card__before"></div>
-              <img src="antoine.png" alt="Team" class="cover-image active">
-              <img src="LA TOAST FAMILY 🍞 (@latoastfamily) • Photos et vidéos Instagram/imgi_46_317181177_969597524464203_3881831880170538857_n.jpg" alt="Team" class="cover-image">
-              <img src="LA TOAST FAMILY 🍞 (@latoastfamily) • Photos et vidéos Instagram/imgi_60_280006371_572110594437746_8403878874681865028_n.jpg" alt="Team" class="cover-image">
-            </div>
-          </div>
-
-          <!-- Sticker Good Vibes : Entre les deux photos -->
-          <div class="sticker__wrap">
-            <img src="imgi_21_68556a7139df865b400fb432_good-vibes.svg" alt="Good Vibes" class="sticker__svg">
-          </div>
-
-          <!-- Doodle courbe : Boucle vers la droite -->
-          <div class="doodle__wrap">
-            <img src="ligne noeud.svg" alt="" class="doodle__svg">
-          </div>
+      <!-- Title Row -->
+      <div class="team__row-text">
+        <div class="team__col-text">
+          <h2 class="is--text-balance">
+            <span>nous sommes une </span>
+            <em class="is--relative">
+              <span>équipe </span>
+            </em>
+            <span>passionnée de </span>
+            <em class="is--relative is--inline-block">
+              <span>gourmands.</span>
+            </em>
+          </h2>
         </div>
-
-        <!-- GROUP 2 : Forme verte + Photo + Sticker poings -->
-        <div class="group-right">
-          <!-- Forme verte background -->
-          <div class="blob-green__wrap">
-            <img src="forme verte.svg" alt="" class="blob-green__svg">
-          </div>
-
-          <!-- Photo carrée au-dessus -->
-          <div class="photo-card__wrap is--3">
-            <div class="photo-card">
-              <div class="photo-card__before"></div>
-              <img src="LA TOAST FAMILY 🍞 (@latoastfamily) • Photos et vidéos Instagram/imgi_70_253144269_712844023023470_2928419188501753783_n.jpg" alt="Team member" class="cover-image">
-            </div>
-          </div>
-
-          <!-- Sticker poings en haut à droite de l'image -->
-          <div class="sticker-poings__wrap">
-            <img src="poings.svg" alt="" class="sticker-poings__svg">
-          </div>
-        </div>
-
       </div>
 
+      <!-- Team Grid -->
+      <div class="team__grid">
+        <div class="team__grid-before"></div>
+
+        <!-- Blob 1 - Green -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 436 511" fill="none" class="team-grid__blob-1">
+          <path d="M436 199.141V199.315C435.019 225.786 426.015 251.582 410.908 273.329C402.123 287.217 392.574 300.975 380.039 311.75C374.873 318.564 368.442 324.05 361.422 328.926C357.302 331.473 353.487 334.346 349.476 337.046C344.244 339.985 338.772 342.597 333.213 344.861C325.605 347.887 316.994 347.995 309.058 349.432C308.208 349.606 307.14 349.846 306.595 350.434C305.636 351.37 306.072 352.893 306.464 354.047C307.816 357.748 309.146 361.361 310.606 364.844C314.312 372.616 316.492 380.866 317.43 389.465C319.152 403.985 316.187 418.439 310.911 431.892C304.459 447.348 292.316 459.669 279.628 470.227C263.845 481.177 246.907 490.537 228.922 497.242C222.294 500.246 215.318 502.336 208.233 503.903C204.048 505.471 199.993 506.864 195.524 507.277C186.019 508.388 176.754 511.152 167.053 511C154.562 511.043 141.765 509.367 130.298 504.186C127.661 503.163 125.306 501.618 123.279 499.658C119.268 495.936 114.668 492.671 111.725 487.947C104.465 475.626 103.572 460.148 106.166 446.412C107.67 438.271 108.302 429.846 110.94 421.922C113.73 414.499 116.87 407.272 119.769 399.849C121.535 395.8 118.374 396.453 115.823 397.476C105.861 401.046 95.9416 405.073 85.4994 406.88C76.5614 408.926 67.3836 407.903 58.4674 406.88C54.2382 406.662 49.9872 406.118 45.976 404.812C34.9234 401.416 25.2442 394.145 17.2654 385.917C9.91877 376.317 4.97017 365.149 2.63757 353.329C-0.654231 342.074 -0.458031 330.014 0.849969 318.433C0.762769 290.439 16.0664 256.284 34.1386 235.103C39.8502 226.656 47.8072 219.864 56.1566 214.096C62.4568 210.852 68.3864 206.586 75.515 204.975C84.9326 203.494 94.5464 202.188 104.008 203.429C116.325 205.932 128.642 209.677 139.672 215.75C152.36 224.697 145.188 209.524 143.248 203.581C138.277 189.932 135.465 175.63 131.715 161.611C129.819 152.773 128.816 143.783 128.009 134.792C126.767 128.37 126.331 121.883 125.917 115.374C125.306 102.727 127.312 90.1662 128.227 77.6274C131.04 65.1974 134.266 52.898 139.869 41.2953C154.104 10.9279 189.093 -21.1593 214.446 18.3075C221.488 32 226.872 47.0422 229.27 62.2804C229.728 68.7239 231.254 75.0586 231.843 81.5022C232.017 86.9879 231.93 92.4736 232.235 97.9594C232.322 109.344 231.974 120.795 231.93 132.202C232.039 134.117 228.595 150.183 233.805 142.607C241.435 129.35 246.798 114.721 255.932 102.313C261.077 95.456 266.527 88.7512 272.325 82.4382C275.617 79.5865 278.647 77.3879 281.503 73.992C292.621 66.1552 304.764 56.4899 319.239 60.8219C343.197 70.7702 308.644 125.715 300.469 140.321C297.548 145.546 294.561 150.814 290.921 155.581C288.654 158.716 290.376 158.672 292.861 157.17C304.371 150.509 316.536 144.653 329.485 141.366C349.476 133.53 371.755 131.331 392.879 135.315C401.599 138.362 409.949 142.498 417.143 148.376C422.571 152.49 425.47 158.564 428.37 164.55C431.378 168.686 432.403 173.671 433.427 178.678C434.757 185.339 436.022 192.458 435.891 199.162L436 199.141Z" fill="#2D7864"/>
+        </svg>
+
+        <!-- Blob 2 - Blue -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 429 489" fill="none" class="team-grid__blob-2">
+          <path d="M428.447 360.712C427.723 368.647 422.586 377.099 415.069 380.636C409.225 382.878 402.811 384.103 396.708 385.655C378.934 389.468 360.694 386.242 342.937 383.827C325.903 381.757 309.508 376.22 292.337 375.012C287.32 374.477 282.82 378.445 284.027 383.62C284.424 385.5 285.596 387.311 286.855 388.864C291.785 395.402 297.992 400.473 303.974 405.924C317.059 418.586 328.041 433.076 340.161 446.583C347.385 456.277 353.108 471.371 346.195 482.377C343.247 486.034 337.937 487.5 332.92 488.276C311.646 490.519 291.475 480.635 272.045 473.717C262.856 470.647 254.409 466.179 246.013 461.383C189.362 430.402 138.418 390.313 91.5591 346.049C79.1807 333.87 66.9575 321.192 56.0445 307.598C50.9932 300.923 47.0452 293.384 42.3559 286.45C38.7527 281.033 33.9772 276.462 29.9086 271.408C28.5121 269.476 27.4777 267.285 26.3743 265.18C23.8401 260.057 19.9438 255.969 17.2199 251.001C11.3065 241.099 7.65162 229.904 3.99673 219.191C1.73828 212.774 -0.347774 206.098 0.0487476 199.216C0.134948 187.848 -1.46838 174.444 14.4959 175.928C26.4261 178.602 36.8218 191.729 44.8385 200.389C48.4244 203.908 51.8724 207.151 54.8377 211.394C58.2857 215.396 61.4234 219.847 64.6818 223.918C67.2333 226.937 70.5607 229.283 73.0605 232.491C76.0258 236.286 78.4049 240.633 81.8874 244.066C87.7145 250.449 92.6969 257.228 98.6103 263.438C104.92 271.373 112.126 278.463 120.126 284.725C123.488 287.864 126.505 291.435 130.125 294.385C135.418 298.749 141.228 302.475 146.02 307.443C150.417 312.446 156.209 315.689 161.778 319.19C167.036 322.485 171.588 326.763 177.156 329.42C179.621 330.645 182.138 331.8 184.569 333.094C194.31 338.476 205.826 344.341 217.291 341.46C220.722 340.322 223.359 337.924 223.911 334.698C224.497 331.179 221.394 328.178 218.86 325.073C216.119 321.519 212.464 318.897 208.585 316.706C191.5 306.736 176.242 293.971 160.675 281.706C138.607 264.956 117.798 246.671 99.4895 225.85C72.0606 195.265 48.0624 161.127 32.2877 123.039C24.5986 104.875 21.4782 85.2784 19.961 65.7167C19.4094 58.0404 23.5125 41.67 33.4773 51.1403C39.2872 58.6614 41.6318 68.1662 47.1486 75.9805C51.338 82.5528 55.1308 89.9532 60.9752 95.18C64.2508 97.4225 66.8885 94.4382 67.3195 90.7639C67.8195 83.8811 66.2334 76.7568 65.8369 69.874C64.0267 49.2428 65.0611 24.4198 77.4739 7.08342C83.4907 -0.610152 95.3002 -1.52441 103.937 1.89112C113.092 8.39443 121.626 16.6573 126.453 26.8521C128.574 30.9404 131.901 34.3904 134.263 38.427C137.59 43.5847 139.762 49.5188 142.486 54.9181C148.555 64.6817 154.675 74.6523 162.209 83.5189C166.502 88.1419 169.743 93.4204 173.622 98.354C180.811 106.962 187.707 115.897 196.379 123.229C199.603 125.954 202.792 128.68 205.757 131.681C211.688 137.65 217.136 144.136 223.273 149.897C227.756 153.934 233.048 156.918 236.893 161.628C243.961 169.373 251.237 176.704 255.96 185.985C257.667 190.591 258.805 195.49 261.236 199.802C265.046 207.168 262.529 215.914 257.633 222.124C254.616 225.677 250.133 227.834 246.272 230.438C242.617 232.508 238.272 232.232 234.135 232.526C230.376 232.733 226.635 233.06 222.86 233.06C209.843 232.733 197.344 227.868 185.811 222.193C180.001 219.329 173.743 217.19 168.433 213.326C158.244 206.288 148.572 198.37 138.659 190.987C134.728 188.365 126.384 180.12 123.177 187.02C121.229 194.817 132.677 207.271 137.28 213.275C166.984 247.016 208.705 268.423 251.15 281.516C269.218 285.622 287.32 290.383 305.56 293.539C323.404 296.162 340.989 300.077 358.591 303.993C370.659 307.564 381.692 313.222 393.433 317.431C403.811 322.02 413.414 328.661 421.276 336.958C426.93 343.323 429.154 352.035 428.516 360.436L428.482 360.763L428.447 360.712Z" fill="#4B69F0"/>
+        </svg>
+
+        <!-- Team Card 1 (top: 0%, left: 14.3%) -->
+        <div class="team-card__wrap">
+          <div class="team-card">
+            <div class="before__125"></div>
+            <div data-image-cycle="1" class="team-card__target">
+              <div data-image-cycle-item="active" class="cover">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=500&fit=crop" loading="lazy" alt="Team 1" class="cover-image">
+              </div>
+              <div data-image-cycle-item="not-active" class="cover">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=500&fit=crop" loading="lazy" alt="Team 1b" class="cover-image">
+              </div>
+              <div data-image-cycle-item="not-active" class="cover">
+                <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=500&fit=crop" loading="lazy" alt="Team 1c" class="cover-image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Card 2 (top: 18.6%, left: 0%) -->
+        <div class="team-card__wrap is--2">
+          <div class="team-card">
+            <div class="before__100"></div>
+            <div data-image-cycle="2" class="team-card__target">
+              <div data-image-cycle-item="active" class="cover">
+                <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=400&fit=crop" loading="lazy" alt="Team 2" class="cover-image">
+              </div>
+              <div data-image-cycle-item="not-active" class="cover">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=400&fit=crop" loading="lazy" alt="Team 2b" class="cover-image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Card 3 (top: 8.8%, right: 0%) -->
+        <div class="team-card__wrap is--3">
+          <div class="team-card">
+            <div class="before__100"></div>
+            <div data-image-cycle="3" class="team-card__target">
+              <div data-image-cycle-item="active" class="cover">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop" loading="lazy" alt="Team 3" class="cover-image">
+              </div>
+              <div data-image-cycle-item="not-active" class="cover">
+                <img src="https://images.unsplash.com/photo-1482049016gy-2d7445eb06?w=400&h=400&fit=crop" loading="lazy" alt="Team 3b" class="cover-image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Card 4 (top: 34.7%, left: 45.8%) -->
+        <div class="team-card__wrap is--4">
+          <div class="team-card">
+            <div class="before__100"></div>
+            <div data-image-cycle="4" class="team-card__target">
+              <div data-image-cycle-item="active" class="cover">
+                <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400&h=400&fit=crop" loading="lazy" alt="Team 4" class="cover-image">
+              </div>
+              <div data-image-cycle-item="not-active" class="cover">
+                <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&h=400&fit=crop" loading="lazy" alt="Team 4b" class="cover-image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Card 5 (top: 48%, left: 65.1%) -->
+        <div class="team-card__wrap is--5">
+          <div class="team-card">
+            <div class="before__100"></div>
+            <div data-image-cycle="5" class="team-card__target">
+              <div data-image-cycle-item="active" class="cover">
+                <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?w=400&h=400&fit=crop" loading="lazy" alt="Team 5" class="cover-image">
+              </div>
+              <div data-image-cycle-item="not-active" class="cover">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop" loading="lazy" alt="Team 5b" class="cover-image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Card 6 (top: 55.3%, left: 8%) -->
+        <div class="team-card__wrap is--6">
+          <div class="team-card">
+            <div class="before__125"></div>
+            <div data-image-cycle="6" class="team-card__target">
+              <div data-image-cycle-item="active" class="cover">
+                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&h=500&fit=crop" loading="lazy" alt="Team 6" class="cover-image">
+              </div>
+              <div data-image-cycle-item="not-active" class="cover">
+                <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=400&h=500&fit=crop" loading="lazy" alt="Team 6b" class="cover-image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Card 7 (bottom: 0%, left: 54%) -->
+        <div class="team-card__wrap is--7">
+          <div class="team-card">
+            <div class="before__125"></div>
+            <div data-image-cycle="7" class="team-card__target">
+              <div data-image-cycle-item="active" class="cover">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=500&fit=crop" loading="lazy" alt="Team 7" class="cover-image">
+              </div>
+              <div data-image-cycle-item="not-active" class="cover">
+                <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=400&h=500&fit=crop" loading="lazy" alt="Team 7b" class="cover-image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticker 1 - Good Vibes -->
+        <div class="team-grid__sticker-1">
+          <img src="imgi_21_68556a7139df865b400fb432_good-vibes.svg" alt="Good Vibes" class="team-grid__sticker-1-svg">
+        </div>
+
+        <!-- Sticker 2 - Poings -->
+        <div class="team-grid__sticker-2">
+          <img src="poings.svg" alt="Poings" class="team-grid__sticker-2-svg">
+        </div>
+
+        <!-- Sticker 3 -->
+        <div class="team-grid__sticker-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 94 136" fill="none" class="team-grid__sticker-3-svg">
+            <path d="M47 0L94 136H0L47 0Z" fill="#82a0ff"/>
+          </svg>
+        </div>
+
+        <!-- Sticker 4 -->
+        <div class="team-grid__sticker-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 136 114" fill="none" class="team-grid__sticker-4-svg">
+            <ellipse cx="68" cy="57" rx="68" ry="57" fill="#f5693c"/>
+          </svg>
+        </div>
+
+        <!-- Sticker 5 -->
+        <div class="team-grid__sticker-5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 185 123" fill="none" class="team-grid__sticker-5-svg">
+            <path d="M92.5 0L185 123H0L92.5 0Z" fill="#f0befa"/>
+          </svg>
+        </div>
+
+        <!-- Line 1 -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 378 127" fill="none" data-scroll-animation="draw" class="team-grid__line-1-svg"><path d="M2 123C9 35.9999 84.5 17 124 25.9999C217.764 47.3635 207 115 177.5 123C105.777 142.45 110.737 1.99991 232.5 2C310.5 2.00006 366.5 79 376 118" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="753.06 9.08" style="transform-origin: 0px 0px; stroke-dashoffset: 0; stroke-dasharray: 739.567px, 0.1px;" data-svg-origin="2 2"></path></svg>
+
+        <!-- Line 2 -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 119 83" fill="none" data-scroll-animation="draw" class="team-grid__line-2-svg"><path d="M2.20715 14.5599C2.20715 14.5599 37.0608 45.1156 67.5218 1.69971C46.2609 42.8794 94.5128 38.3901 102.486 34.9303C94.1065 41.0482 85.1095 75.705 116.798 80.5908" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="transform-origin: 0px 0px; stroke-dashoffset: 0; stroke-dasharray: 204.802px, 0.1px;" data-svg-origin="2.2071499824523926 1.6997101306915283"></path></svg>
+
+      </div>
     </div>
   </section>
 

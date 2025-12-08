@@ -1,49 +1,63 @@
 /* ===========================================
-   TEAM SECTION - Image Rotation avec Fondu
+   TEAM SECTION - JavaScript
+   Style Truus - Image Cycle Animation
    =========================================== */
 
 (function() {
   'use strict';
 
   // Configuration
-  const CYCLE_INTERVAL = 3000; // 3 secondes
+  const CYCLE_INTERVAL = 3000; // 3 seconds between image changes
+  const STAGGER_DELAY = 500;   // 500ms delay between each card's cycle
 
-  /**
-   * Initialize team image rotation
-   */
-  function initTeamImageRotation() {
-    const cycleElements = document.querySelectorAll('[data-image-cycle]');
+  // Get all image cycle containers
+  const imageCycleContainers = document.querySelectorAll('[data-image-cycle]');
 
-    cycleElements.forEach((element, index) => {
-      const images = element.querySelectorAll('.cover-image');
+  if (imageCycleContainers.length === 0) {
+    console.log('Team section: No image cycle containers found');
+    return;
+  }
 
-      if (images.length <= 1) return;
+  // Initialize each image cycle
+  imageCycleContainers.forEach((container, containerIndex) => {
+    const items = container.querySelectorAll('[data-image-cycle-item]');
 
-      let currentIndex = 0;
+    if (items.length <= 1) return; // No need to cycle if only one image
 
-      // Démarrage avec un délai différent pour chaque groupe
-      setTimeout(() => {
-        setInterval(() => {
-          // Retirer la classe active de l'image actuelle
-          images[currentIndex].classList.remove('active');
+    let currentIndex = 0;
 
-          // Passer à l'image suivante
-          currentIndex = (currentIndex + 1) % images.length;
-
-          // Ajouter la classe active à la nouvelle image
-          images[currentIndex].classList.add('active');
-        }, CYCLE_INTERVAL);
-      }, index * 500); // Décalage de 500ms entre les groupes
+    // Find the initially active item
+    items.forEach((item, index) => {
+      if (item.dataset.imageCycleItem === 'active') {
+        currentIndex = index;
+      }
     });
-  }
 
-  /**
-   * Initialize on DOM ready
-   */
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTeamImageRotation);
-  } else {
-    initTeamImageRotation();
-  }
+    // Start the cycle with staggered delay
+    setTimeout(() => {
+      setInterval(() => {
+        // Set current as previous
+        items[currentIndex].dataset.imageCycleItem = 'previous';
+
+        // Move to next
+        currentIndex = (currentIndex + 1) % items.length;
+
+        // Set new active
+        items[currentIndex].dataset.imageCycleItem = 'active';
+
+        // Reset previous to not-active after transition
+        setTimeout(() => {
+          items.forEach((item, index) => {
+            if (index !== currentIndex && item.dataset.imageCycleItem === 'previous') {
+              item.dataset.imageCycleItem = 'not-active';
+            }
+          });
+        }, 1000); // Wait for fade transition to complete
+
+      }, CYCLE_INTERVAL);
+    }, containerIndex * STAGGER_DELAY);
+  });
+
+  console.log('Team section initialized with', imageCycleContainers.length, 'image cycles');
 
 })();
