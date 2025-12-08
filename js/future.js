@@ -134,6 +134,37 @@
   // Start animation
   animate();
 
+  // Line draw animation on scroll - dynamic
+  const titleLine = document.querySelector('.future__title-line');
+  const linePath = titleLine ? titleLine.querySelector('svg path') : null;
+
+  if (titleLine && linePath) {
+    const pathLength = linePath.getTotalLength();
+
+    // Set initial state
+    linePath.style.strokeDasharray = pathLength;
+    linePath.style.strokeDashoffset = pathLength;
+
+    function updateLineProgress() {
+      const rect = titleLine.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Calculate progress: 0 when element enters bottom, 1 when it reaches center
+      const elementCenter = rect.top + rect.height / 2;
+      const progress = 1 - (elementCenter / (windowHeight * 0.7));
+
+      // Clamp between 0 and 1
+      const clampedProgress = Math.min(Math.max(progress, 0), 1);
+
+      // Update stroke-dashoffset
+      const offset = pathLength * (1 - clampedProgress);
+      linePath.style.strokeDashoffset = offset;
+    }
+
+    window.addEventListener('scroll', updateLineProgress);
+    updateLineProgress(); // Initial call
+  }
+
   console.log('Future section animations initialized');
 
 })();

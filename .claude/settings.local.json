@@ -11,7 +11,12 @@
       "Bash(lsof:*)",
       "Bash(cat:*)",
       "Bash(git commit:*)",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(curl:*)",
+      "Bash(tree:*)",
+      "Bash(for:*)",
+      "Bash(do mv \"$f\" \"../assets/team/food/\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

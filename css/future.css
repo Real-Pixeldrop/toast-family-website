@@ -64,6 +64,11 @@
   width: 39.375em;
 }
 
+/* Line draw animation - controlled by JS scroll */
+.future__title-line svg path {
+  transition: stroke-dashoffset 0.1s ease-out;
+}
+
 /* ------------------------- Cards Row -------------------------------------------------- */
 
 .future__row-cards {

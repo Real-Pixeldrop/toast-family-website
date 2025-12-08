@@ -106,16 +106,92 @@
 
   // Drag handling
   let isDragging = false;
+  let isOverFlick = false;
   let startX = 0;
   let currentX = 0;
   let containerWidth = init.clientWidth;
 
+  // Cursor label (glisser)
+  const cursorLabel = document.getElementById('cursorLabel');
+  let labelTargetX = 0;
+  let labelTargetY = 0;
+  let labelCurrentX = 0;
+  let labelCurrentY = 0;
+  let labelAnimationFrameId = null;
+  const labelEasing = 0.15;
+
+  function animateFlickCursorLabel() {
+    labelCurrentX += (labelTargetX - labelCurrentX) * labelEasing;
+    labelCurrentY += (labelTargetY - labelCurrentY) * labelEasing;
+
+    if (cursorLabel) {
+      cursorLabel.style.left = labelCurrentX + 'px';
+      cursorLabel.style.top = labelCurrentY + 'px';
+    }
+
+    if (isOverFlick && !isDragging) {
+      labelAnimationFrameId = requestAnimationFrame(animateFlickCursorLabel);
+    } else {
+      labelAnimationFrameId = null;
+    }
+  }
+
+  function updateFlickCursorLabel(e) {
+    labelTargetX = e.clientX + 50;
+    labelTargetY = e.clientY + 50;
+
+    if (!labelAnimationFrameId) {
+      labelCurrentX = labelTargetX;
+      labelCurrentY = labelTargetY;
+      labelAnimationFrameId = requestAnimationFrame(animateFlickCursorLabel);
+    }
+  }
+
+  // Cursor management for flick section
+  dragger.addEventListener('mouseenter', () => {
+    isOverFlick = true;
+    if (window.cursorManager) {
+      window.cursorManager.switchCursor('drag');
+    }
+    if (cursorLabel) {
+      cursorLabel.style.opacity = '1';
+      cursorLabel.style.transform = 'scale(1)';
+    }
+  });
+
+  dragger.addEventListener('mouseleave', () => {
+    isOverFlick = false;
+    if (window.cursorManager && !isDragging) {
+      window.cursorManager.switchCursor('default');
+    }
+    if (cursorLabel) {
+      cursorLabel.style.opacity = '0';
+      cursorLabel.style.transform = 'scale(0.8)';
+    }
+  });
+
+  dragger.addEventListener('mousemove', updateFlickCursorLabel);
+
   function onDragStart(e) {
+    // Ignore if clicking on sound button
+    if (e.target.closest('.flick-sound-btn')) return;
+
     isDragging = true;
     startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
     currentX = 0;
     containerWidth = init.clientWidth;
     init.setAttribute('data-flick-drag-status', 'grabbing');
+
+    // Update cursor to dragging
+    if (window.cursorManager) {
+      window.cursorManager.switchCursor('dragging');
+    }
+
+    // Hide label during drag
+    if (cursorLabel) {
+      cursorLabel.style.opacity = '0';
+      cursorLabel.style.transform = 'scale(0.8)';
+    }
 
     // Remove transitions during drag
     cards.forEach(card => {
@@ -157,6 +233,18 @@
     activeIdx = mod(activeIdx + shift, total);
     renderDiscrete(activeIdx, true);
     init.setAttribute('data-flick-drag-status', 'grab');
+
+    // Update cursor back to drag (open hand)
+    if (window.cursorManager && isOverFlick) {
+      window.cursorManager.switchCursor('drag');
+    }
+
+    // Show label again after drag
+    if (cursorLabel && isOverFlick) {
+      cursorLabel.style.opacity = '1';
+      cursorLabel.style.transform = 'scale(1)';
+      labelAnimationFrameId = requestAnimationFrame(animateFlickCursorLabel);
+    }
   }
 
   // Mouse events

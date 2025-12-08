@@ -107,8 +107,8 @@
 
 .services-view-all {
   padding: 14px 32px;
-  background: #CCFF00;
-  color: #000;
+  background: #FF6B35;
+  color: #fff;
   border-radius: 30px;
   font-size: 14px;
   font-weight: 600;
@@ -119,7 +119,7 @@
 }
 
 .services-view-all:hover {
-  background: #E0FF66;
+  background: #ff8255;
   transform: scale(1.05);
 }
 
@@ -166,38 +166,20 @@
   transition: opacity 0.3s ease;
 }
 
-.service-card-dark .service-image .static-image {
+/* Slideshow Images - GIF-like instant switch */
+.service-card-dark .service-image .slideshow-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
-  transition: opacity 0.3s ease;
+  visibility: hidden;
   z-index: 1;
 }
 
-.service-card-dark .service-image .gif-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 0;
-}
-
-.service-card-dark:hover .service-image .static-image,
-.service-card-dark.is-active .service-image .static-image {
-  opacity: 0;
-}
-
-.service-card-dark:hover .service-image .gif-image,
-.service-card-dark.is-active .service-image .gif-image {
-  opacity: 1;
+.service-card-dark .service-image .slideshow-image.active {
+  visibility: visible;
 }
 
 .service-card-dark .service-image::after {
@@ -209,20 +191,9 @@
   z-index: 2;
 }
 
-/* Category Badge on Dark Card */
+/* Category Badge on Dark Card - Hidden */
 .service-card-dark .service-category {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 8px 18px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: rgba(255, 255, 255, 0.95) !important;
-  color: #000 !important;
-  font-weight: 700;
-  border-radius: 6px;
-  z-index: 3;
+  display: none;
 }
 
 /* Content */
@@ -240,15 +211,13 @@
 }
 
 .service-card-dark .service-name {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 700;
   color: #fff;
   margin-bottom: 0;
   text-transform: uppercase;
-  letter-spacing: -1px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 /* Responsive - Carousel */
@@ -323,7 +292,7 @@
   }
 
   .service-card-dark .service-name {
-    font-size: 26px;
+    font-size: 18px;
   }
 }
 

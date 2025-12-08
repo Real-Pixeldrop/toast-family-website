@@ -13,6 +13,7 @@ const cursorDragging = document.getElementById('cursorDragging');
 let currentCursor = 'default';
 let cursorX = 0;
 let cursorY = 0;
+let isMouseInWindow = true;
 
 // ===========================================
 // Update Cursor Position
@@ -36,6 +37,12 @@ function updateCursorPosition(e) {
 
   cursorDragging.style.left = (cursorX + offsetX) + 'px';
   cursorDragging.style.top = (cursorY + offsetY) + 'px';
+
+  // Si la souris était hors fenêtre, réafficher le curseur
+  if (!isMouseInWindow) {
+    isMouseInWindow = true;
+    showCurrentCursor();
+  }
 }
 
 // ===========================================
@@ -69,6 +76,40 @@ function switchCursor(type) {
 }
 
 // ===========================================
+// Hide/Show All Cursors
+// ===========================================
+function hideAllCursors() {
+  isMouseInWindow = false;
+  cursorDefault.style.opacity = '0';
+  cursorPointer.style.opacity = '0';
+  cursorDrag.style.opacity = '0';
+  cursorDragging.style.opacity = '0';
+}
+
+function showCurrentCursor() {
+  // Hide all first
+  cursorDefault.style.opacity = '0';
+  cursorPointer.style.opacity = '0';
+  cursorDrag.style.opacity = '0';
+  cursorDragging.style.opacity = '0';
+
+  // Show current
+  switch(currentCursor) {
+    case 'pointer':
+      cursorPointer.style.opacity = '1';
+      break;
+    case 'drag':
+      cursorDrag.style.opacity = '1';
+      break;
+    case 'dragging':
+      cursorDragging.style.opacity = '1';
+      break;
+    default:
+      cursorDefault.style.opacity = '1';
+  }
+}
+
+// ===========================================
 // Initialize Global Cursor
 // ===========================================
 function initGlobalCursor() {
@@ -77,6 +118,9 @@ function initGlobalCursor() {
 
   // Track mouse movement globally
   document.addEventListener('mousemove', updateCursorPosition);
+
+  // Hide cursor when mouse leaves the document
+  document.documentElement.addEventListener('mouseleave', hideAllCursors);
 
   // Pointer cursor on links, buttons, clickable elements
   const clickableSelectors = 'a, button, [role="button"], .nav-link, .view-link, .control-btn, .sound-toggle, .sound-toggle-card';

@@ -1,0 +1,248 @@
+/* ===========================================
+   CLIENTS TRUUS SECTION - Proud to have worked with
+   Style grille de logos clients
+   =========================================== */
+
+/* ------------------------- Section Container -------------------------------------------------- */
+
+.clients-truus {
+  padding-top: var(--section-padding, 8em);
+  padding-bottom: var(--section-padding, 8em);
+  background-color: #f0ebe6;
+  color: #000;
+  overflow: hidden;
+}
+
+/* ------------------------- Main Row -------------------------------------------------- */
+
+.clients-truus__row {
+  display: flex;
+  gap: 4em;
+  align-items: flex-start;
+}
+
+/* ------------------------- Left Column -------------------------------------------------- */
+
+.clients-truus__col-left {
+  flex: 1;
+  position: relative;
+  min-height: 30em;
+}
+
+.clients-truus__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  position: relative;
+  z-index: 2;
+}
+
+.clients-truus__title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.clients-truus__line-svg {
+  width: 8em;
+  margin-top: 0.5em;
+  position: relative;
+  z-index: 2;
+}
+
+/* ------------------------- Blob -------------------------------------------------- */
+
+.clients-truus__blob {
+  position: absolute;
+  top: 2em;
+  left: -2em;
+  width: 20em;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* ------------------------- Sticker -------------------------------------------------- */
+
+.clients-truus__sticker {
+  position: absolute;
+  bottom: 8em;
+  left: 8em;
+  width: 5em;
+  z-index: 3;
+  transform: rotate(-10deg);
+}
+
+.clients-truus__sticker-img {
+  width: 100%;
+  height: auto;
+}
+
+/* ------------------------- Arrow -------------------------------------------------- */
+
+.clients-truus__arrow-svg {
+  position: absolute;
+  bottom: 4em;
+  left: 12em;
+  width: 8em;
+  z-index: 2;
+  color: #000;
+}
+
+/* ------------------------- Right Column -------------------------------------------------- */
+
+.clients-truus__col-right {
+  flex: 1;
+}
+
+/* ------------------------- Clients Grid -------------------------------------------------- */
+
+.clients-truus__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+
+/* ------------------------- Client Item -------------------------------------------------- */
+
+.clients-truus__item {
+  aspect-ratio: 1;
+  border-radius: 1.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clients-truus__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Offset grid items like in the design */
+.clients-truus__item:nth-child(2) {
+  transform: translateY(2em);
+}
+
+.clients-truus__item:nth-child(4) {
+  transform: translateY(2em);
+}
+
+.clients-truus__item:nth-child(6) {
+  transform: translateY(2em);
+}
+
+.clients-truus__item:nth-child(2):hover,
+.clients-truus__item:nth-child(4):hover,
+.clients-truus__item:nth-child(6):hover {
+  transform: translateY(calc(2em - 5px));
+}
+
+/* ------------------------- Client Colors -------------------------------------------------- */
+
+.clients-truus__item.is--orange-gradient {
+  background: linear-gradient(135deg, #FFB088 0%, #E8D5F2 100%);
+}
+
+.clients-truus__item.is--light-pink {
+  background-color: #E8D5F2;
+}
+
+.clients-truus__item.is--green {
+  background-color: #2D7864;
+}
+
+.clients-truus__item.is--burgundy {
+  background-color: #8B2346;
+}
+
+.clients-truus__item.is--blue {
+  background-color: #8BA4F9;
+}
+
+/* ------------------------- Client Logo -------------------------------------------------- */
+
+.clients-truus__logo {
+  max-width: 80%;
+  max-height: 60%;
+  object-fit: contain;
+}
+
+/* White logos on dark backgrounds */
+.clients-truus__item.is--green .clients-truus__logo,
+.clients-truus__item.is--burgundy .clients-truus__logo {
+  filter: brightness(0) invert(1);
+}
+
+/* ------------------------- RESPONSIVE -------------------------------------------------- */
+
+@media screen and (max-width: 991px) {
+  .clients-truus__row {
+    flex-direction: column;
+    gap: 3em;
+  }
+
+  .clients-truus__col-left {
+    min-height: auto;
+    text-align: center;
+  }
+
+  .clients-truus__blob {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15em;
+    margin-top: -2em;
+  }
+
+  .clients-truus__sticker {
+    display: none;
+  }
+
+  .clients-truus__arrow-svg {
+    display: none;
+  }
+
+  .clients-truus__grid {
+    max-width: 30em;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .clients-truus {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+
+  .clients-truus__item {
+    padding: 1em;
+  }
+
+  .clients-truus__item:nth-child(2),
+  .clients-truus__item:nth-child(4),
+  .clients-truus__item:nth-child(6) {
+    transform: translateY(1em);
+  }
+
+  .clients-truus__item:nth-child(2):hover,
+  .clients-truus__item:nth-child(4):hover,
+  .clients-truus__item:nth-child(6):hover {
+    transform: translateY(calc(1em - 5px));
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .clients-truus__grid {
+    gap: 0.75em;
+  }
+
+  .clients-truus__item {
+    border-radius: 1em;
+  }
+
+  .clients-truus__title {
+    font-size: 1.75rem;
+  }
+}

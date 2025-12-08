@@ -470,5 +470,41 @@ Projet propriétaire - © 2025 La Toast Family
 
 ---
 
-**Dernière mise à jour** : 7 décembre 2025
+## 🔔 Notifications
+
+Quand tu termines une tâche demandée par l'utilisateur, exécute cette commande pour envoyer une notification push :
+
+```bash
+curl -s -F "token=ay8n6dvpu4bs7bi22neg4arjoy9nt5" -F "user=u3oj144n5yjw4onxw6ray3rcpjd3gc" -F "message=Terminé" -F "sound=light-noting-1" https://api.pushover.net/1/messages.json
+```
+
+---
+
+## 📁 Organisation des Assets
+
+**IMPORTANT** : Quand l'utilisateur ajoute des images/fichiers dans le dossier racine, **avant toute autre action** :
+
+1. **Renommer** les fichiers si nécessaire (noms clairs, sans espaces ni caractères spéciaux)
+2. **Ranger** dans le bon dossier selon le type :
+
+```
+assets/
+├── cursors/      # Curseurs personnalisés SVG
+├── icons/        # Icônes UI (audio, etc.)
+├── images/
+│   └── projects/ # Thumbnails des projets
+├── lines/        # Lignes décoratives SVG
+├── logo/         # Logo Toast Family
+├── shapes/       # Formes décoratives SVG (blobs)
+├── stickers/     # Stickers SVG (good-vibes, poings, etc.)
+├── team/         # Photos de l'équipe
+├── textures/     # Textures (grain, etc.)
+└── videos/       # Vidéos (hero, projets)
+```
+
+3. **Mettre à jour** les chemins dans le code (HTML, CSS, JS) si les fichiers sont déjà référencés
+
+---
+
+**Dernière mise à jour** : 8 décembre 2025
 **Maintenu par** : Claude Code (assistant IA) + Développeur client

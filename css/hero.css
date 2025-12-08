@@ -114,6 +114,56 @@
 }
 
 /* ===========================================
+   Nav Preview Stack (Projets hover effect)
+   =========================================== */
+.nav-link[data-preview="true"] {
+  position: relative;
+}
+
+.nav-preview-stack {
+  position: fixed;
+  width: 80px;
+  height: 100px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 9999;
+  transition: opacity 0.2s ease;
+}
+
+.nav-preview-stack.is-visible {
+  opacity: 1;
+}
+
+.nav-preview-img {
+  position: absolute;
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: rotate(0deg) scale(0.8);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  border: 2px solid white;
+}
+
+.nav-preview-img.is-active {
+  opacity: 1;
+  transform: rotate(var(--rotation, 0deg)) scale(1);
+  z-index: var(--z-index, 1);
+}
+
+/* Stacked effect - each image gets slight rotation */
+.nav-preview-img:nth-child(1) { --rotation: -8deg; }
+.nav-preview-img:nth-child(2) { --rotation: 5deg; }
+.nav-preview-img:nth-child(3) { --rotation: -3deg; }
+.nav-preview-img:nth-child(4) { --rotation: 7deg; }
+.nav-preview-img:nth-child(5) { --rotation: -6deg; }
+.nav-preview-img:nth-child(6) { --rotation: 4deg; }
+.nav-preview-img:nth-child(7) { --rotation: -5deg; }
+.nav-preview-img:nth-child(8) { --rotation: 6deg; }
+
+/* ===========================================
    Sound Toggle (follows cursor)
    =========================================== */
 .sound-toggle {

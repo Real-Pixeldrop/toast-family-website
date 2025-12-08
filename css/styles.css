@@ -1,5 +1,5 @@
 /* ===========================================
-   LA TOAST FAMILY - Card Carousel Styles
+   LA TOAST FAMILY - Global Styles
    =========================================== */
 
 /* Reset & Base */
@@ -15,65 +15,6 @@ body {
   background: #fff;
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-/* ===========================================
-   Projects Section (Carousel)
-   =========================================== */
-.projects-section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background: #000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  overflow: hidden;
-  user-select: none;
-}
-
-/* ===========================================
-   Decorative Elements
-   =========================================== */
-.doodle-top-left {
-  position: absolute;
-  top: 50px;
-  left: 40px;
-  width: 90px;
-  height: 90px;
-  opacity: 0.85;
-  pointer-events: none;
-}
-
-.fork-doodle {
-  position: absolute;
-  top: 50%;
-  left: 16%;
-  transform: translateY(-50%) rotate(-15deg);
-  width: 70px;
-  height: 70px;
-  opacity: 0.85;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.accent-shape {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-60%);
-  width: 160px;
-  height: 220px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.accent-shape svg {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 10px 40px rgba(255, 107, 53, 0.25));
 }
 
 /* ===========================================
@@ -119,242 +60,9 @@ body {
 }
 
 /* ===========================================
-   Cards Wrapper & Container
-   =========================================== */
-.cards-wrapper {
-  position: relative;
-  width: 100%;
-  height: 480px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  z-index: 5;
-  cursor: none;
-  padding-bottom: 20px;
-}
-
-.cards-wrapper.is-dragging {
-  cursor: none;
-}
-
-.cards-container {
-  position: relative;
-  width: 280px;
-  height: 420px;
-}
-
-/* ===========================================
-   Cards
-   =========================================== */
-.card {
-  position: absolute;
-  width: 280px;
-  height: 420px;
-  border-radius: 22px;
-  border: 4px solid white;
-  overflow: hidden;
-  transform-origin: center bottom;
-  box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.5);
-  will-change: transform, opacity;
-  bottom: 0;
-  left: 0;
-}
-
-.card.is-center {
-  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.6);
-}
-
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: #111;
-}
-
-.card-image,
-.card-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.card-video {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.card.is-center:not(.is-dragging) .card-video {
-  opacity: 1;
-}
-
-.card.is-center:not(.is-dragging) .card-image {
-  opacity: 0;
-}
-
-/* Card Overlay */
-.card-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 40%, rgba(0,0,0,0.2) 100%);
-  text-align: center;
-  padding: 20px;
-  pointer-events: none;
-}
-
-.overlay-text {
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
-  text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
-  line-height: 1.3;
-}
-
-/* Category Badge */
-.category-badge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: white;
-  color: #000;
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 12px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  pointer-events: none;
-}
-
-.category-icon {
-  font-size: 12px;
-}
-
-/* ===========================================
-   Project Info
-   =========================================== */
-.project-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  margin-top: 25px;
-  z-index: 10;
-}
-
-.brand-badge {
-  padding: 6px 18px;
-  border-radius: 16px;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: lowercase;
-  transition: all 0.35s ease;
-}
-
-.project-title {
-  color: white;
-  font-size: 32px;
-  font-weight: 500;
-  letter-spacing: -0.5px;
-  text-align: center;
-  line-height: 1.15;
-  transition: all 0.35s ease;
-}
-
-.project-title span {
-  display: block;
-  color: #FF6B35;
-}
-
-.view-link {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  position: relative;
-  margin-top: 8px;
-  opacity: 0.85;
-  transition: opacity 0.3s ease;
-}
-
-.view-link::after {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: white;
-}
-
-.view-link:hover {
-  opacity: 1;
-}
-
-/* ===========================================
-   Navigation Dots
-   =========================================== */
-.dots {
-  display: flex;
-  gap: 8px;
-  margin-top: 30px;
-  z-index: 10;
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-}
-
-.dot:hover {
-  background: rgba(255,255,255,0.4);
-}
-
-.dot.active {
-  background: white;
-  width: 20px;
-  border-radius: 3px;
-}
-
-/* ===========================================
-   Responsive
+   Responsive - Touch Devices
    =========================================== */
 @media (max-width: 768px) {
-  .fork-doodle,
-  .doodle-top-left,
-  .accent-shape {
-    opacity: 0.4;
-  }
-
-  .card {
-    width: 240px;
-    height: 360px;
-  }
-
-  .cards-container {
-    width: 240px;
-    height: 360px;
-  }
-
-  .project-title {
-    font-size: 24px;
-  }
-
   /* Hide custom cursor on touch devices */
   .cursor-default,
   .cursor-pointer,
@@ -367,70 +75,43 @@ body {
   body {
     cursor: auto !important;
   }
+}
 
-  .cards-wrapper {
-    cursor: grab;
-  }
+/* ===========================================
+   RIPPLE EFFECT - Ondulation au clic
+   =========================================== */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple-effect 0.6s ease-out forwards;
+  pointer-events: none;
+}
 
-  .cards-wrapper.is-dragging {
-    cursor: grabbing;
+@keyframes ripple-effect {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
   }
 }
 
 /* ===========================================
-   Sound Toggle Button on Cards
+   TEXT REVEAL - Mots qui apparaissent
    =========================================== */
-.sound-toggle-card {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+.word-reveal {
+  display: inline-block;
   opacity: 0;
-  transform: scale(0.8);
-  transition: all 0.3s ease;
-  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.card:hover .sound-toggle-card {
+.word-reveal.is-visible {
   opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
+  transform: translateY(0);
 }
 
-.sound-toggle-card:hover {
-  background: rgba(255, 107, 53, 0.8);
-  border-color: #FF6B35;
-  transform: scale(1.1);
-}
-
-.sound-toggle-card svg {
-  width: 20px;
-  height: 20px;
-  color: white;
-}
-
-.sound-toggle-card .icon-muted {
-  display: block;
-}
-
-.sound-toggle-card .icon-unmuted {
-  display: none;
-}
-
-.sound-toggle-card.unmuted .icon-muted {
-  display: none;
-}
-
-.sound-toggle-card.unmuted .icon-unmuted {
-  display: block;
+/* Preserve line breaks */
+[data-text-reveal] br + .word-reveal {
+  margin-left: 0;
 }

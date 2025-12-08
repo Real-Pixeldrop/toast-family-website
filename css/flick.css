@@ -264,6 +264,11 @@
   color: var(--color-light, #f0ebe6);
 }
 
+/* Line draw animation */
+.flick-group__blob-scribble-svg path {
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
 /* ------------------------- Bottom Info -------------------------------------------------- */
 
 .flick-group__bottom {
@@ -354,11 +359,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  cursor: grab;
+  cursor: url('../assets/cursors/cursor-drag.svg') 25 25, grab;
 }
 
 [data-flick-drag-status="grabbing"] .flick-group__dragger {
-  cursor: grabbing;
+  cursor: url('../assets/cursors/cursor-dragging.svg') 25 25, grabbing;
 }
 
 /* ------------------------- RESPONSIVE -------------------------------------------------- */

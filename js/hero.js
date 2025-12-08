@@ -45,6 +45,8 @@ function animateSoundToggle() {
   // Continuer l'animation si le bouton est visible
   if (soundToggle.classList.contains('is-visible')) {
     animationFrameId = requestAnimationFrame(animateSoundToggle);
+  } else {
+    animationFrameId = null; // Reset pour pouvoir relancer l'animation
   }
 }
 
