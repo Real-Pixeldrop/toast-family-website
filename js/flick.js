@@ -83,6 +83,22 @@
         setCardImmediate(card, cfg);
       }
     });
+    // Update videos
+    updateVideos(ci);
+  }
+
+  // Handle video play/pause based on active card
+  function updateVideos(activeIndex) {
+    cards.forEach((card, i) => {
+      const video = card.querySelector('.flick-card__video');
+      if (!video) return;
+
+      if (i === activeIndex) {
+        video.play().catch(() => {}); // Play active card video
+      } else {
+        video.pause(); // Pause others
+      }
+    });
   }
 
   // Initial render
