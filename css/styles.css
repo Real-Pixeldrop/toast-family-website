@@ -18,6 +18,34 @@ body {
 }
 
 /* ===========================================
+   Typography - Fraunces pour les titres
+   =========================================== */
+/* Fraunces pour les titres des sections (pas hero) */
+.footer-cta-title,
+.services-carousel-title,
+.services-truus__col-title h2,
+.clients-truus__col-row-title h2,
+.team__col-text h2,
+.future__col-title h2,
+.flick__heading {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+}
+
+/* Italiques avec Fraunces */
+.services-truus__col-title h2 em,
+.clients-truus__col-row-title h2 em,
+.team__col-text h2 em,
+.future__col-title h2 em {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+}
+
+/* Hero garde Space Grotesk */
+.headline-text {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+}
+
+/* ===========================================
    Custom Cursors
    =========================================== */
 .cursor-default,

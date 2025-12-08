@@ -12,7 +12,7 @@
 
 .future {
   padding-top: 6em;
-  padding-bottom: var(--section-padding, 12em);
+  padding-bottom: 6em;
   overflow: clip;
   background-color: var(--color-light, #F0EBE7);
   color: var(--color-dark, black);
@@ -40,7 +40,7 @@
 }
 
 .future__col-title h2 em {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -58,6 +58,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 0.5em;
 }
 
 .future__title-line {
@@ -160,6 +161,21 @@
 .tag[data-theme="Pink"] {
   background-color: #f0befa;
   color: var(--color-dark, black);
+}
+
+.tag[data-theme="Orange"] {
+  background-color: #FF6B35;
+  color: white;
+}
+
+.tag[data-theme="Green"] {
+  background-color: #2D7864;
+  color: white;
+}
+
+.tag[data-theme="Brown"] {
+  background-color: #302621;
+  color: white;
 }
 
 .tag__h4 {
