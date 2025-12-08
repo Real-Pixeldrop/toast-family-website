@@ -1,0 +1,339 @@
+/* ===========================================
+   TESTIMONIALS TRUUS SECTION - Ce qu'ils disent de nous
+   Style cartes en éventail avec stickers
+   =========================================== */
+
+/* ------------------------- Section Container -------------------------------------------------- */
+
+.testimonials-truus {
+  padding-top: var(--section-padding, 8em);
+  padding-bottom: var(--section-padding, 8em);
+  background-color: #F0EBE7;
+  color: #000;
+  overflow: hidden;
+}
+
+/* ------------------------- Title Row -------------------------------------------------- */
+
+.testimonials-truus__row-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4em;
+}
+
+.testimonials-truus__col-title {
+  text-align: center;
+  position: relative;
+}
+
+.testimonials-truus__col-title h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.testimonials-truus__col-title h2 em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.testimonials-truus__line-svg {
+  width: 10em;
+  margin-top: 0.5em;
+}
+
+/* ------------------------- Cards Row -------------------------------------------------- */
+
+.testimonials-truus__row-cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  padding: 4em 0;
+  position: relative;
+}
+
+/* ------------------------- Card Wrapper -------------------------------------------------- */
+
+.testimonial-truus-card__wrap {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: 19.25em;
+  margin-left: -4.933em;
+}
+
+.testimonial-truus-card__wrap.is--1 {
+  margin-left: 0;
+  z-index: 5;
+}
+
+.testimonial-truus-card__wrap.is--2 {
+  z-index: 4;
+}
+
+.testimonial-truus-card__wrap.is--3 {
+  z-index: 3;
+}
+
+.testimonial-truus-card__wrap.is--4 {
+  z-index: 2;
+}
+
+.testimonial-truus-card__wrap.is--5 {
+  z-index: 1;
+}
+
+/* ------------------------- Card -------------------------------------------------- */
+
+.testimonial-truus-card {
+  width: 19.25em;
+  border-radius: 1.25em;
+  position: relative;
+  overflow: visible;
+}
+
+.testimonial-truus-card__before {
+  padding-top: 133.333%;
+}
+
+.testimonial-truus-card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3.5em 1.5em 1.5em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.25em;
+  justify-content: space-between;
+  gap: 1.5em;
+}
+
+/* ------------------------- Card Colors (pastel / soft) -------------------------------------------------- */
+
+.testimonial-truus-card.is--green .testimonial-truus-card__content {
+  background-color: #D4E8E0;
+  color: #1a1a1a;
+}
+
+.testimonial-truus-card.is--blue .testimonial-truus-card__content {
+  background-color: #D6E4F9;
+  color: #1a1a1a;
+}
+
+.testimonial-truus-card.is--orange .testimonial-truus-card__content {
+  background-color: #FFE4D9;
+  color: #1a1a1a;
+}
+
+.testimonial-truus-card.is--pink .testimonial-truus-card__content {
+  background-color: #E8D5F2;
+  color: #1a1a1a;
+}
+
+.testimonial-truus-card.is--light-pink .testimonial-truus-card__content {
+  background-color: #F5EDF8;
+  color: #1a1a1a;
+}
+
+/* ------------------------- Stars -------------------------------------------------- */
+
+.testimonial-truus-card__stars {
+  display: flex;
+  gap: 0.25em;
+}
+
+.testimonial-truus-card__star {
+  width: 1.1em;
+  height: 1.1em;
+  color: #FFB800;
+}
+
+/* ------------------------- Sticker -------------------------------------------------- */
+
+.testimonial-truus-card__sticker {
+  position: absolute;
+  top: 0;
+  right: 15%;
+  width: 8em;
+  z-index: 10;
+  transform: translateY(-35%) rotate(10deg);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-truus-card__sticker-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ------------------------- Quote -------------------------------------------------- */
+
+.testimonial-truus-card__quote {
+  font-size: 1.25em;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+  font-style: italic;
+}
+
+/* ------------------------- Author -------------------------------------------------- */
+
+.testimonial-truus-card__author {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  margin-top: auto;
+  padding-top: 1em;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-truus-card.is--green .testimonial-truus-card__author {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-truus-card__avatar {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.testimonial-truus-card__info {
+  flex: 1;
+}
+
+.testimonial-truus-card__name {
+  font-size: 0.9em;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.testimonial-truus-card__role {
+  font-size: 0.75em;
+  margin: 0;
+  margin-top: 0.2em;
+  opacity: 0.8;
+  line-height: 1.3;
+}
+
+/* ------------------------- RESPONSIVE -------------------------------------------------- */
+
+@media screen and (max-width: 1400px) {
+  .testimonial-truus-card__wrap {
+    width: 16em;
+    margin-left: -4em;
+  }
+
+  .testimonial-truus-card__wrap.is--1 {
+    margin-left: 0;
+  }
+
+  .testimonial-truus-card {
+    width: 16em;
+  }
+
+  .testimonial-truus-card__sticker {
+    width: 6em;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .testimonial-truus-card__wrap {
+    width: 14em;
+    margin-left: -3.5em;
+  }
+
+  .testimonial-truus-card {
+    width: 14em;
+  }
+
+  .testimonial-truus-card__quote {
+    font-size: 1em;
+  }
+
+  .testimonial-truus-card__avatar {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .testimonial-truus-card__sticker {
+    width: 5em;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .testimonials-truus__row-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3em 2em;
+    padding: 2em;
+  }
+
+  .testimonial-truus-card__wrap {
+    width: 16em;
+    margin-left: 0 !important;
+  }
+
+  .testimonial-truus-card {
+    width: 16em;
+  }
+
+  .testimonial-truus-card__sticker {
+    width: 6em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .testimonials-truus {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+
+  .testimonials-truus__row-title {
+    margin-bottom: 2em;
+  }
+
+  .testimonials-truus__row-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5em;
+  }
+
+  .testimonial-truus-card__wrap {
+    width: 100%;
+    max-width: 18em;
+  }
+
+  .testimonial-truus-card {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .testimonial-truus-card__wrap {
+    max-width: 16em;
+  }
+
+  .testimonial-truus-card__quote {
+    font-size: 0.95em;
+  }
+
+  .testimonial-truus-card__name {
+    font-size: 0.85em;
+  }
+
+  .testimonial-truus-card__role {
+    font-size: 0.75em;
+  }
+
+  .testimonial-truus-card__sticker {
+    width: 5em;
+  }
+}

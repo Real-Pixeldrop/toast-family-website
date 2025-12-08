@@ -1,6 +1,6 @@
 /* ===========================================
    CLIENTS TRUUS SECTION - Proud to have worked with
-   Style grille de logos clients
+   Style double marquee vertical comme Truus
    =========================================== */
 
 /* ------------------------- Section Container -------------------------------------------------- */
@@ -8,7 +8,7 @@
 .clients-truus {
   padding-top: var(--section-padding, 8em);
   padding-bottom: var(--section-padding, 8em);
-  background-color: #f0ebe6;
+  background-color: #F0EBE7;
   color: #000;
   overflow: hidden;
 }
@@ -17,19 +17,28 @@
 
 .clients-truus__row {
   display: flex;
-  gap: 4em;
+  justify-content: space-between;
   align-items: flex-start;
+  gap: 4em;
 }
 
-/* ------------------------- Left Column -------------------------------------------------- */
+/* ------------------------- Left Column (Title) -------------------------------------------------- */
 
-.clients-truus__col-left {
-  flex: 1;
+.clients-truus__col-title {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  max-width: 32em;
+  margin-top: 3em;
+  padding-top: 5.625em;
   position: relative;
-  min-height: 30em;
 }
 
-.clients-truus__title {
+.clients-truus__col-row-title {
+  position: relative;
+}
+
+.clients-truus__col-row-title h2 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   margin: 0;
@@ -38,175 +47,274 @@
   z-index: 2;
 }
 
-.clients-truus__title em {
+.clients-truus__col-row-title h2 em {
   font-style: italic;
   font-weight: 400;
 }
 
-.clients-truus__line-svg {
-  width: 8em;
-  margin-top: 0.5em;
-  position: relative;
-  z-index: 2;
+.clients-truus__line-with-svg {
+  width: 8.5em;
+  position: absolute;
+  top: 97%;
+  left: 51%;
 }
 
 /* ------------------------- Blob -------------------------------------------------- */
 
-.clients-truus__blob {
+.clients-truus__blob-svg {
+  width: 25.25em;
   position: absolute;
-  top: 2em;
-  left: -2em;
-  width: 20em;
-  z-index: 1;
-  opacity: 0.9;
+  top: 0;
+  left: 0;
+  transform: translateX(-18.75%);
 }
 
-/* ------------------------- Sticker -------------------------------------------------- */
+/* ------------------------- Sticker Row -------------------------------------------------- */
 
-.clients-truus__sticker {
-  position: absolute;
-  bottom: 8em;
-  left: 8em;
-  width: 5em;
-  z-index: 3;
-  transform: rotate(-10deg);
-}
-
-.clients-truus__sticker-img {
+.clients-truus__col-row-sticker {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
-  height: auto;
+  position: relative;
 }
 
-/* ------------------------- Arrow -------------------------------------------------- */
+.clients-truus__sticker-love {
+  margin-left: 10em;
+  position: relative;
+  transform: rotate(-12deg);
+}
+
+.clients-truus__sticker-love-svg {
+  width: 5.625em;
+  position: relative;
+}
 
 .clients-truus__arrow-svg {
+  width: 23.75em;
   position: absolute;
-  bottom: 4em;
-  left: 12em;
-  width: 8em;
-  z-index: 2;
-  color: #000;
+  bottom: 0;
+  left: 0;
+  transform: translate(50%, 45%) scaleY(-1) rotate(-18deg);
 }
 
-/* ------------------------- Right Column -------------------------------------------------- */
+/* ------------------------- Right Column (Marquee) -------------------------------------------------- */
 
-.clients-truus__col-right {
-  flex: 1;
+.clients-truus__col-marquee {
+  flex: 0 0 auto;
 }
 
-/* ------------------------- Clients Grid -------------------------------------------------- */
+/* ------------------------- Double Marquee -------------------------------------------------- */
 
-.clients-truus__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1em;
+.double-marquee {
+  width: 27.625em;
+  position: relative;
 }
 
-/* ------------------------- Client Item -------------------------------------------------- */
+.double-marquee__before {
+  pointer-events: none;
+  padding-top: 154.299%;
+}
 
-.clients-truus__item {
-  aspect-ratio: 1;
-  border-radius: 1.25em;
+.double-marquee__single {
+  width: calc(50% - 0.5em);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.double-marquee__single.is--flipped {
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  transform: scaleY(-1);
+}
+
+.double-marquee__single-list {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5em;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-direction: column;
 }
 
-.clients-truus__item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.double-marquee__single-item {
+  flex: none;
+  width: 100%;
+  margin-bottom: 1em;
 }
 
-/* Offset grid items like in the design */
-.clients-truus__item:nth-child(2) {
-  transform: translateY(2em);
-}
+/* ------------------------- Marquee Logo -------------------------------------------------- */
 
-.clients-truus__item:nth-child(4) {
-  transform: translateY(2em);
-}
-
-.clients-truus__item:nth-child(6) {
-  transform: translateY(2em);
-}
-
-.clients-truus__item:nth-child(2):hover,
-.clients-truus__item:nth-child(4):hover,
-.clients-truus__item:nth-child(6):hover {
-  transform: translateY(calc(2em - 5px));
-}
-
-/* ------------------------- Client Colors -------------------------------------------------- */
-
-.clients-truus__item.is--orange-gradient {
-  background: linear-gradient(135deg, #FFB088 0%, #E8D5F2 100%);
-}
-
-.clients-truus__item.is--light-pink {
-  background-color: #E8D5F2;
-}
-
-.clients-truus__item.is--green {
-  background-color: #2D7864;
-}
-
-.clients-truus__item.is--burgundy {
+.marquee-logo {
+  border-radius: 1.25em;
   background-color: #8B2346;
+  user-select: none;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-.clients-truus__item.is--blue {
-  background-color: #8BA4F9;
+.marquee-logo.is--flipped {
+  transform: scaleY(-1);
 }
 
-/* ------------------------- Client Logo -------------------------------------------------- */
+.marquee-logo__before {
+  padding-top: 100%;
+}
 
-.clients-truus__logo {
-  max-width: 80%;
-  max-height: 60%;
+.marquee-logo .cover-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 70%;
+  max-height: 70%;
   object-fit: contain;
 }
 
-/* White logos on dark backgrounds */
-.clients-truus__item.is--green .clients-truus__logo,
-.clients-truus__item.is--burgundy .clients-truus__logo {
-  filter: brightness(0) invert(1);
+.double-marquee__single.is--flipped .marquee-logo {
+  transform: scaleY(-1);
+}
+
+/* ------------------------- Logo Color Themes (Left Column) -------------------------------------------------- */
+
+[data-logo-theme="a"] .marquee-logo {
+  background-color: #8B2346;
+}
+
+[data-logo-theme="b"] .marquee-logo {
+  background-color: #1a2744;
+}
+
+[data-logo-theme="c"] .marquee-logo {
+  background-color: #FF6B35;
+}
+
+[data-logo-theme="d"] .marquee-logo {
+  background-color: #2D7864;
+}
+
+/* ------------------------- Logo Color Themes (Right Column - Flipped) -------------------------------------------------- */
+
+.double-marquee__single.is--flipped [data-logo-theme="a"] .marquee-logo {
+  background-color: #E8D5F2;
+}
+
+.double-marquee__single.is--flipped [data-logo-theme="b"] .marquee-logo {
+  background-color: #CCFF00;
+}
+
+.double-marquee__single.is--flipped [data-logo-theme="c"] .marquee-logo {
+  background-color: #8BA4F9;
+}
+
+.double-marquee__single.is--flipped [data-logo-theme="d"] .marquee-logo {
+  background-color: #8B2346;
+}
+
+/* ------------------------- Fade Overlays -------------------------------------------------- */
+
+.double-marquee__fade {
+  background-image: linear-gradient(180deg, #F0EBE7, transparent);
+  width: calc(100% + 2px);
+  height: 8em;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.double-marquee__fade.is--flipped {
+  top: auto;
+  bottom: -1px;
+  transform: scaleY(-1);
+}
+
+/* ------------------------- CSS Keyframe Animation -------------------------------------------------- */
+
+@keyframes translateY {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+[data-css-marquee-list] {
+  animation: translateY 30s linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
 }
 
 /* ------------------------- RESPONSIVE -------------------------------------------------- */
 
-@media screen and (max-width: 991px) {
-  .clients-truus__row {
-    flex-direction: column;
-    gap: 3em;
+@media screen and (max-width: 1200px) {
+  .clients-truus__col-title {
+    max-width: 26em;
   }
 
-  .clients-truus__col-left {
-    min-height: auto;
-    text-align: center;
+  .double-marquee {
+    width: 22em;
   }
 
-  .clients-truus__blob {
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 15em;
-    margin-top: -2em;
-  }
-
-  .clients-truus__sticker {
-    display: none;
+  .clients-truus__blob-svg {
+    width: 20em;
   }
 
   .clients-truus__arrow-svg {
+    width: 18em;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .clients-truus__row {
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+  }
+
+  .clients-truus__col-title {
+    max-width: 100%;
+    padding-top: 3em;
+    margin-top: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .clients-truus__col-row-title h2 {
+    text-align: center;
+  }
+
+  .clients-truus__line-with-svg {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .clients-truus__blob-svg {
+    width: 18em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .clients-truus__col-row-sticker {
     display: none;
   }
 
-  .clients-truus__grid {
+  .double-marquee {
+    width: 100%;
     max-width: 30em;
-    margin: 0 auto;
+  }
+
+  .double-marquee__before {
+    padding-top: 120%;
+  }
+
+  .marquee-logo .cover-image {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .double-marquee__single.is--flipped .marquee-logo .cover-image {
+    transform: scaleY(-1) translate(-50%, 50%) rotate(90deg);
   }
 }
 
@@ -216,33 +324,41 @@
     padding-bottom: 4em;
   }
 
-  .clients-truus__item {
-    padding: 1em;
+  .clients-truus__col-title {
+    padding-top: 2em;
   }
 
-  .clients-truus__item:nth-child(2),
-  .clients-truus__item:nth-child(4),
-  .clients-truus__item:nth-child(6) {
-    transform: translateY(1em);
+  .clients-truus__blob-svg {
+    width: 14em;
   }
 
-  .clients-truus__item:nth-child(2):hover,
-  .clients-truus__item:nth-child(4):hover,
-  .clients-truus__item:nth-child(6):hover {
-    transform: translateY(calc(1em - 5px));
+  .double-marquee {
+    max-width: 24em;
+  }
+
+  .double-marquee__before {
+    padding-top: 140%;
+  }
+
+  .double-marquee__fade {
+    height: 5em;
   }
 }
 
 @media screen and (max-width: 479px) {
-  .clients-truus__grid {
-    gap: 0.75em;
+  .clients-truus__col-row-title h2 {
+    font-size: 1.75rem;
   }
 
-  .clients-truus__item {
+  .double-marquee {
+    max-width: 18em;
+  }
+
+  .marquee-logo {
     border-radius: 1em;
   }
 
-  .clients-truus__title {
-    font-size: 1.75rem;
+  .double-marquee__single-item {
+    margin-bottom: 0.75em;
   }
 }

@@ -14,10 +14,16 @@
 /* ------------------------- Flick Section -------------------------------------------------- */
 
 .flick {
+  padding: 6px 12px 12px 12px;
+  overflow: hidden;
+}
+
+.flick__tile {
   padding-top: var(--section-padding, 12em);
-  padding-bottom: var(--section-padding, 12em);
+  padding-bottom: 1em;
   background-color: var(--color-dark, black);
-  color: var(--color-light, #f0ebe6);
+  color: var(--color-light, #F0EBE7);
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -99,7 +105,7 @@
 }
 
 .flick-card__border {
-  border: .375em solid var(--color-light, #f0ebe6);
+  border: .375em solid var(--color-light, #F0EBE7);
   border-radius: var(--border-radius-l, 1.25em);
   pointer-events: none;
   width: calc(100% + 2px);
@@ -168,7 +174,7 @@
   grid-row-gap: .25em;
   border: .125em solid var(--color-dark, black);
   border-radius: var(--border-radius-s, .5em);
-  background-color: var(--color-light, #f0ebe6);
+  background-color: var(--color-light, #F0EBE7);
   color: var(--color-dark, black);
   justify-content: center;
   align-items: center;
@@ -261,7 +267,7 @@
   top: 19%;
   left: -7%;
   transform: translate(-50%, -50%);
-  color: var(--color-light, #f0ebe6);
+  color: var(--color-light, #F0EBE7);
 }
 
 /* Line draw animation */

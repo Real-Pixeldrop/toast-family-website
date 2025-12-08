@@ -6,7 +6,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: #fff;
+  background: #F0EBE7;
   padding: 100px 40px;
   display: flex;
   flex-direction: column;
@@ -303,7 +303,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: #fff;
+  background: #F0EBE7;
   padding: 80px 0;
   display: flex;
   flex-direction: column;

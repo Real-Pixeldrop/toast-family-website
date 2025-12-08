@@ -14,7 +14,7 @@
   padding-top: 6em;
   padding-bottom: var(--section-padding, 12em);
   overflow: clip;
-  background-color: var(--color-light, #f0ebe6);
+  background-color: var(--color-light, #F0EBE7);
   color: var(--color-dark, black);
 }
 
@@ -150,7 +150,7 @@
 .tag {
   border-radius: 10em;
   background-color: var(--color-dark, black);
-  color: var(--color-light, #f0ebe6);
+  color: var(--color-light, #F0EBE7);
   white-space: nowrap;
   padding: .75em 1.25em;
   font-size: .875em;

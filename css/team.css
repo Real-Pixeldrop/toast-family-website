@@ -15,7 +15,7 @@
   --container-padding-l: 6.75em;
 
   /* Colors */
-  --color-light: #f0ebe6;
+  --color-light: #F0EBE7;
   --color-dark: black;
   --color-darkgrey: #1a1a1a;
   --color-orange: #f5693c;
@@ -48,6 +48,7 @@
 
 /* ------------------------- Team Section -------------------------------------------------- */
 
+/* Team est maintenant à l'intérieur du flick__tile */
 .team {
   padding-top: 1em;
   padding-bottom: var(--section-padding);
