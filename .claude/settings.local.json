@@ -18,7 +18,8 @@
       "Bash(do mv \"$f\" \"../assets/team/food/\")",
       "Bash(done)",
       "Bash(git push origin main)",
-      "Bash(open:*)"
+      "Bash(open:*)",
+      "Bash(curl -s -F \"token=ay8n6dvpu4bs7bi22neg4arjoy9nt5\" -F \"user=u3oj144n5yjw4onxw6ray3rcpjd3gc\" -F \"message=Stickers Team remplacés\" -F \"sound=light-noting-1\" https://api.pushover.net/1/messages.json)"
     ],
     "deny": [],
     "ask": []
