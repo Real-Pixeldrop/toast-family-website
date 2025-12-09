@@ -25,6 +25,7 @@ body {
 .services-carousel-title,
 .services-truus__col-title h2,
 .clients-truus__col-row-title h2,
+.testimonials-truus__col-title h2,
 .team__col-text h2,
 .future__col-title h2,
 .flick__heading {
@@ -34,6 +35,7 @@ body {
 /* Italiques avec Fraunces */
 .services-truus__col-title h2 em,
 .clients-truus__col-row-title h2 em,
+.testimonials-truus__col-title h2 em,
 .team__col-text h2 em,
 .future__col-title h2 em {
   font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
@@ -43,6 +45,17 @@ body {
 /* Hero garde Space Grotesk */
 .headline-text {
   font-family: 'Space Grotesk', -apple-system, sans-serif;
+}
+
+/* ===========================================
+   Utility Classes
+   =========================================== */
+.is--relative {
+  position: relative;
+}
+
+.is--inline-block {
+  display: inline-block;
 }
 
 /* ===========================================

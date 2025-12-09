@@ -1,0 +1,202 @@
+/* ===========================================
+   FULLWIDTH IMAGE SECTION
+   Grande image pleine largeur avec texte overlay
+   =========================================== */
+
+.fullwidth-image {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+  margin-bottom: -60px;
+}
+
+/* Image de fond */
+.fullwidth-image__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 154%;
+  object-fit: cover;
+  object-position: 0px 38%;
+  filter: grayscale(20%);
+  transform: scaleX(-1);
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+/* Image active avec Ken Burns */
+.fullwidth-image__img.is-active {
+  opacity: 1;
+  animation: kenBurns 8s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scaleX(-1) scale(1);
+  }
+  100% {
+    transform: scaleX(-1) scale(1.05);
+  }
+}
+
+/* Video de fond */
+.fullwidth-image__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay gradient - haut plus foncé */
+.fullwidth-image__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.5) 25%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  pointer-events: none;
+}
+
+/* Conteneur texte - haut droite */
+.fullwidth-image__content {
+  position: absolute;
+  top: 3em;
+  right: 3em;
+  max-width: 700px;
+  text-align: right;
+  z-index: 2;
+}
+
+/* Texte principal */
+.fullwidth-image__text {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  line-height: 1.3;
+  color: #F0EBE7;
+  margin: 0;
+}
+
+/* Mots en gras */
+.fullwidth-image__text strong {
+  font-weight: 700;
+}
+
+/* Mots en italique léger */
+.fullwidth-image__text em {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Bouton CTA */
+.fullwidth-image__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 1.5em;
+  padding: 14px 28px;
+  background: #FF6B35;
+  color: #fff;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.fullwidth-image__cta:hover {
+  background: #fff;
+  color: #FF6B35;
+  transform: translateX(-8px);
+}
+
+.fullwidth-image__cta svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.fullwidth-image__cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* ===========================================
+   Scroll Reveal Animation
+   =========================================== */
+
+.fullwidth-image [data-scroll-reveal="text"] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fullwidth-image [data-scroll-reveal="text"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  margin-bottom: 60px;
+}
+
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+
+@media screen and (max-width: 991px) {
+  .fullwidth-image {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .fullwidth-image__content {
+    bottom: 2.5em;
+    right: 2em;
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fullwidth-image {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .fullwidth-image__content {
+    bottom: 2em;
+    right: 1.5em;
+    left: 1.5em;
+    max-width: none;
+    text-align: left;
+  }
+
+  .fullwidth-image__overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .fullwidth-image {
+    height: 45vh;
+    min-height: 300px;
+  }
+
+  .fullwidth-image__content {
+    bottom: 1.5em;
+    right: 1em;
+    left: 1em;
+  }
+
+  .fullwidth-image__text {
+    font-size: 1rem;
+  }
+}

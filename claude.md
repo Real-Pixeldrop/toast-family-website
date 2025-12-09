@@ -38,10 +38,11 @@
    - Vidéo plein écran avec marge blanche 12px (effet cadre)
    - Corners arrondis 16px
    - Navigation avec logo Toast-V3.png (100px height)
-   - Toggle son avec badge qui suit le curseur (disparaît après 2s)
-   - Headline : "on raconte / vos histoires / gourmandes" (mix filled/outline/underlined)
-   - Contrôles vidéo : play/pause + fullscreen
+   - Toggle son avec badge qui suit le curseur (disparaît après 2s, zone d'exclusion près des contrôles)
+   - Headline : "Photo & Vidéo / pour restaurants." (Fraunces bold + italic semi-transparent)
+   - Contrôles vidéo : play/pause + fullscreen (zone cliquable étendue)
    - Indicateur scroll en bas
+   - Animations au load (fadeInDown nav, fadeInUp titre)
 
 2. **Carousel Projets** (`css/styles.css` + `js/main.js`)
    - Fond noir
@@ -85,18 +86,43 @@
    - Stickers animés (float + rotation) : 45px desktop, 32px mobile
    - Overlap avec le footer (-100px margin-bottom)
 
-7. **Footer** (`css/footer.css`)
+7. **Footer** (`css/footer.css` + `js/footer-physics.js`)
    - Fond noir avec padding top 150px
    - Grid 2 colonnes : CTA email + Navigation
    - Sections : Explorer, Connecter, Legal
    - Année dynamique JavaScript : 2025 (auto-update)
    - Textes traduits en français
    - Status "Nous acceptons de nouveaux clients"
+   - **Logos clients draggables** avec physique (gravité, rebonds, lancer)
+   - Lien Pixel Drop : https://pixel-drop.com
 
-### Sections à Créer 🚧
+8. **Flick Section** (`css/flick.css` + `js/flick.js`)
+   - Carousel de projets draggable horizontal
+   - Cards avec vidéos des vrais projets
+   - Curseurs personnalisés (drag)
+   - **Preview au hover** : stack d'images qui suit le curseur (nav = en bas, footer = en haut)
 
-8. **About** (À propos) - Pas encore créée
-9. **Contact** - Pas encore créée
+9. **Future Section** (`css/future.css`)
+   - Titre avec SVG animés (cercle autour de "petits", ligne sous "Strasbourg")
+   - Cards photos en layout décalé avec tags flottants
+   - Animations hover sur les images
+
+10. **Services Truus** (`css/services-truus.css`)
+    - 3 services avec cards interactives
+    - Micro-animations hover
+
+11. **Clients Truus** (`css/clients-truus.css`)
+    - Logos clients dans le footer (draggables avec physique)
+
+12. **Fullwidth Image** (`css/fullwidth-image.css`)
+    - Grande image avec overlay gradient
+    - Texte en haut à droite
+    - Animation Ken Burns sur l'image
+
+### À faire 🚧
+
+- **Animations scroll bidirectionnelles** : apparaît/disparaît au scroll (Team, Future, etc.)
+- **Stickers** : en attente des nouveaux SVG
 
 ---
 
@@ -470,13 +496,21 @@ Projet propriétaire - © 2025 La Toast Family
 
 ---
 
-## 🔔 Notifications
+## 🔔 Notifications & Refresh
 
-Quand tu termines une tâche demandée par l'utilisateur, exécute cette commande pour envoyer une notification push :
+**IMPORTANT** : Quand tu termines une tâche demandée par l'utilisateur, tu DOIS :
 
+1. **Envoyer une notification push** :
 ```bash
 curl -s -F "token=ay8n6dvpu4bs7bi22neg4arjoy9nt5" -F "user=u3oj144n5yjw4onxw6ray3rcpjd3gc" -F "message=Terminé" -F "sound=light-noting-1" https://api.pushover.net/1/messages.json
 ```
+
+2. **Ouvrir/Rafraîchir la page dans le navigateur** :
+```bash
+open "/Users/akli/Projets Reacts/toast-family-website/index.html"
+```
+
+Ces deux commandes doivent être exécutées à chaque fin de tâche, sans exception.
 
 ---
 
@@ -506,5 +540,5 @@ assets/
 
 ---
 
-**Dernière mise à jour** : 8 décembre 2025
+**Dernière mise à jour** : 9 décembre 2025
 **Maintenu par** : Claude Code (assistant IA) + Développeur client

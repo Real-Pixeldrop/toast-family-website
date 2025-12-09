@@ -12,7 +12,9 @@
   <link rel="stylesheet" href="css/team.css">
   <link rel="stylesheet" href="css/flick.css">
   <link rel="stylesheet" href="css/testimonials-truus.css">
+  <link rel="stylesheet" href="css/fullwidth-image.css">
   <link rel="stylesheet" href="css/clients-truus.css">
+  <link rel="stylesheet" href="css/cta-section.css">
   <link rel="stylesheet" href="css/marquee.css">
   <link rel="stylesheet" href="css/footer.css">
 </head>
@@ -351,6 +353,7 @@
   <section data-bg-section="dark" data-theme-section="dark" class="flick" id="projets">
     <div class="flick__tile">
       <div class="container">
+
       <div class="flick__row-slider">
         <div data-flick-drag-status="grab" data-flick-cards-init class="flick-group">
           <div data-custom-cursor="drag" class="flick-group__top">
@@ -360,7 +363,7 @@
             </svg>
 
             <!-- Blob Background -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 449 458" fill="none" class="flick-group__blob-back-svg">
+            <svg data-scroll-reveal="blob" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 449 458" fill="none" class="flick-group__blob-back-svg">
               <path d="M404.776 223.259C398.804 258.396 403.743 292.836 415.688 327.792C416.361 329.723 417.484 333.136 416.339 334.169L416.226 334.281C415.328 335.201 413.218 335.089 410.681 334.595C400.847 332.777 391.912 330.554 382.078 329.229C352.936 326.647 323.413 330.778 296.718 343.531C273.728 353.858 258.259 366.813 243.576 387.131C226.872 406.103 219.576 425.029 217.667 450.376C217.151 459.469 213.02 460.143 208.889 451.454C200.537 434.503 193.532 416.273 182.172 401.141C171.013 386.974 159.047 372.717 144.813 361.784C136.977 355.991 129.726 349.391 121.419 344.249C117.153 341.578 112.281 340.006 107.97 337.536C92.9953 327.186 75.6629 320.922 58.2856 315.848C41.0655 310.146 23.1044 307.003 4.96379 305.723C1.32668 305.633 -1.74915 305.341 1.14707 301.39C3.84122 297.977 6.58028 294.744 8.98257 291.085C15.3812 281.52 21.3757 271.462 23.8902 259.967C25.372 252.513 27.7743 245.172 28.0662 237.561C27.9315 219.734 23.3963 201.459 12.8442 186.911C5.86184 177.414 9.29689 175.258 20.1184 175.438C38.9326 175.438 57.163 170.589 74.9893 164.796C92.5014 159.565 110.687 155.232 125.595 144.163C143.286 132.174 160.439 118.928 173.977 102.314C177.21 98.3179 179.253 93.5134 182.082 89.2476C186.819 82.7367 192.32 76.6973 195.553 69.1986C199.998 59.9487 202.221 49.5313 204.825 39.6078C206.509 32.6928 208.462 25.7778 209.226 18.6832C210.326 14.4624 207.542 -0.71468 212.257 0.0262124C214.928 0.609946 218.341 6.08806 220.384 9.05163C225.256 16.1687 230.24 23.2408 234.753 30.6049C240.321 40.3263 249.279 47.1515 257.496 54.3583C262.278 58.5792 266.409 63.8328 271.618 67.7168C276.759 71.6233 282.551 74.4747 288.164 77.6179C305.384 88.5965 324.715 94.6808 343.821 101.506C351.387 104.425 359.312 106.198 367.328 107.276C391.103 110.531 414.812 115.695 438.835 115.65C444.313 115.807 453.72 114.64 446.199 123.261C422.288 153.099 411.018 187.113 404.754 223.237L404.776 223.259Z" fill="#E6FAB9"></path>
             </svg>
 
@@ -370,18 +373,15 @@
             </div>
 
             <!-- Cards Collection -->
-            <div data-flick-cards-collection class="flick-group__collection">
+            <div data-scroll-reveal="cards" data-flick-cards-collection class="flick-group__collection">
               <div data-flick-cards-list role="list" class="flick-group__list">
 
-                <!-- Card 1 - Toast Family July -->
+                <!-- Card 1 - GIF Animé (par défaut) -->
                 <div data-flick-cards-item-status="active" data-flick-cards-item role="listitem" class="flick-group__item">
                   <div class="flick-card">
                     <div class="flick-card__before"></div>
                     <div class="flick-card__media">
-                      <img src="assets/images/projects/july-thumbnail.jpg" loading="lazy" alt="Toast Family July" class="cover-image flick-card__poster">
-                      <video class="flick-card__video" muted loop playsinline>
-                        <source src="assets/videos/project-july.mp4" type="video/mp4">
-                      </video>
+                      <img src="assets/images/projects/310F6DFE-0436-4DC2-BDA0-290D7F808570.gif" loading="lazy" alt="Toast Family" class="cover-image flick-card__poster">
                     </div>
                     <div class="flick-card__border"></div>
                     <div class="flick-card__tag is--big">
@@ -439,8 +439,8 @@
                   </div>
                 </div>
 
-                <!-- Card 3 - Mama Bubbele -->
-                <div data-flick-cards-item-status="3-after" data-flick-cards-item role="listitem" class="flick-group__item">
+                <!-- Card 4 - Mama Bubbele -->
+                <div data-flick-cards-item-status="hidden" data-flick-cards-item role="listitem" class="flick-group__item">
                   <div class="flick-card">
                     <div class="flick-card__before"></div>
                     <div class="flick-card__media">
@@ -472,7 +472,7 @@
                   </div>
                 </div>
 
-                <!-- Card 4 - Toastiversaire -->
+                <!-- Card 5 - Toastiversaire -->
                 <div data-flick-cards-item-status="hidden" data-flick-cards-item role="listitem" class="flick-group__item">
                   <div class="flick-card">
                     <div class="flick-card__before"></div>
@@ -505,7 +505,7 @@
                   </div>
                 </div>
 
-                <!-- Card 5 - Dazio -->
+                <!-- Card 6 - Dazio -->
                 <div data-flick-cards-item-status="hidden" data-flick-cards-item role="listitem" class="flick-group__item">
                   <div class="flick-card">
                     <div class="flick-card__before"></div>
@@ -613,19 +613,23 @@
           </div>
 
           <!-- Bottom Info -->
-          <div class="flick-group__bottom">
+          <div data-scroll-reveal="info" class="flick-group__bottom">
             <div class="flick-info-item">
               <div class="flick-info-item__top">
-                <h3 class="flick-info-item__h3">Nos projets gourmands</h3>
+                <h3 class="flick-info-item__h3">Des saveurs en images</h3>
               </div>
               <div class="flick-info-item__bottom">
-                <a href="#projets" class="link-cta">Voir tous les projets</a>
+                <a href="#projets" class="link-cta" id="flickViewAll" data-preview="true">Voir tous les projets</a>
               </div>
             </div>
           </div>
 
         </div>
       </div>
+      </div> <!-- End container -->
+
+      <!-- Spacer between Flick and Team -->
+      <div class="flick__spacer"></div>
 
       <!-- ===========================================
            TEAM SECTION (inside flick__tile)
@@ -637,26 +641,25 @@
         <div class="team__row-text" data-scroll-reveal="title">
         <div class="team__col-text">
           <h2 class="is--text-balance">
-            <span>nous sommes une </span>
+            <span>On met les </span>
             <em class="is--relative is--inline-block">
-              <span>jeune</span>
-              <!-- Circle SVG around "jeune" -->
+              <span>petits</span>
+              <!-- Circle SVG around "petits" -->
               <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 201 86" fill="none" data-scroll-animation="draw" class="team__h2-circle-svg">
                 <path d="M94.2928 1.00027C123.974 0.963816 154.146 4.60865 181.273 16.5546C189.974 20.3907 199.369 26.6143 199.971 36.0452C200.401 42.8702 195.929 49.03 190.946 53.75C180.208 63.9191 166.386 70.3066 152.306 74.9538C125.258 83.8745 96.2711 86.9179 67.9394 83.8289C50.4851 81.9245 33.011 77.6054 17.9651 68.6209C9.40333 63.509 1.07316 55.618 1.00038 45.7041C0.960683 39.7721 4.01088 34.1226 8.27852 29.9767C12.5461 25.8307 17.9452 23.015 23.4369 20.6915C48.2553 10.2126 75.8527 8.8093 102.795 7.54272" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </em>
-            <span> équipe </span>
-            <em>passionnée</em>
-            <span> de </span>
-            <span class="is--light">2 </span>
+            <span> plats </span>
+            <span>dans les </span>
+            <em>grands</em>
+            <span> depuis </span>
             <em class="is--relative is--inline-block">
-              <span>gourmands.</span>
-              <!-- Underline SVG under "gourmands" -->
+              <span>Strasbourg.</span>
+              <!-- Underline SVG under "Strasbourg" -->
               <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 403 17" fill="none" data-scroll-animation="draw" class="team__h2-line-svg">
                 <path d="M1 16C25.8389 14.2222 50.643 12.2137 75.2387 9.47009C107.364 5.99145 144.414 1.26496 174.898 1C178.242 1.35897 168.254 2.8718 166.786 3.22223C163.842 3.76924 160.464 4.41881 157.146 5.11966C152.23 6.22223 134.982 9.64957 144.171 12.1282C152.23 13.8974 167.551 13.4701 178.572 13.094C200.11 12.2393 222.066 10.2137 243.639 8.99146C296.296 5.69231 349.291 6.34188 402 8.58975" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </em>
-            <span> pas vantards !</span>
           </h2>
         </div>
       </div>
@@ -853,11 +856,13 @@
     <div class="container is--large">
       <div class="testimonials-truus__row-title">
         <div class="testimonials-truus__col-title">
-          <h2 data-text-reveal>ce qu'ils disent <em>de nous:</em></h2>
-          <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 159 17" fill="none" class="testimonials-truus__line-svg">
-            <path d="M1 12.1515C53.0771 5.7187 105.529 2.30552 158 1.93652" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M30.2672 15.9461C64.1899 12.8158 98.2663 11.3583 132.33 11.5735" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
+          <h2 data-scroll-reveal="title">Ils nous <em class="is--relative is--inline-block"><span class="stretch-word" data-base="ado" data-letter="o" data-end="rent" data-max="6">adorent</span>
+            <!-- Underline SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 159 17" fill="none" class="testimonials-truus__line-svg">
+              <path d="M1 12.1515C53.0771 5.7187 105.529 2.30552 158 1.93652" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M30.2672 15.9461C64.1899 12.8158 98.2663 11.3583 132.33 11.5735" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </em></h2>
         </div>
       </div>
 
@@ -1021,9 +1026,35 @@
   </section>
 
   <!-- ===========================================
-       CLIENTS SECTION - Proud to have worked with
+       FULLWIDTH IMAGE - Making of / Behind the scenes
        =========================================== -->
-  <section data-bg-section="light" data-theme-section="light" class="clients-truus">
+  <section class="fullwidth-image" data-fullwidth-slideshow>
+    <img src="assets/images/backgrounds/DSCF8098-scaled.jpg" alt="La Toast Family" class="fullwidth-image__img is-active">
+    <img src="assets/images/backgrounds/15-3 (1).jpg" alt="La Toast Family" class="fullwidth-image__img">
+    <img src="assets/images/backgrounds/V3.1-2.png" alt="La Toast Family" class="fullwidth-image__img">
+    <div class="fullwidth-image__overlay"></div>
+    <div class="fullwidth-image__content" data-scroll-reveal="text">
+      <p class="fullwidth-image__text">
+        <strong>Chaque projet</strong> est une <em>aventure culinaire.</em>
+      </p>
+      <p class="fullwidth-image__text">
+        On goûte, on crée, on <strong>sublime</strong> vos plats.
+      </p>
+      <a href="#footer" class="fullwidth-image__cta">
+        Collaborons ensemble
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===========================================
+       CLIENTS SECTION - Proud to have worked with
+       (MASQUÉ TEMPORAIREMENT)
+       =========================================== -->
+  <section data-bg-section="light" data-theme-section="light" class="clients-truus" style="display: none;">
     <div class="container is--large">
       <div class="clients-truus__row">
         <!-- Left Column - Title -->
@@ -1035,7 +1066,7 @@
 
           <!-- Title Row -->
           <div class="clients-truus__col-row-title">
-            <h2 data-text-reveal>Proud to have worked <em>with:</em></h2>
+            <h2 data-text-reveal>Ils nous font <em>confiance</em></h2>
             <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 132 5" fill="none" data-scroll-animation="draw" class="clients-truus__line-with-svg">
               <path d="M1 2.08377C44.3458 3.90451 87.9791 5.71442 131 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
@@ -1144,29 +1175,29 @@
     <!-- Band 1 - Scrolling left -->
     <div class="marquee-band marquee-band-1">
       <div class="marquee-content">
-        <span class="marquee-text">Créons ensemble</span>
+        <span class="marquee-text is--fraunces">Créons ensemble</span>
         <img src="Work - Truus/téléchargement.svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Photo Food</span>
+        <span class="marquee-text is--italic">Photo Food</span>
         <img src="Work - Truus/téléchargement (1).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Strasbourg</span>
+        <span class="marquee-text is--fraunces">Strasbourg</span>
         <img src="Work - Truus/téléchargement (2).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Créons ensemble</span>
+        <span class="marquee-text is--italic">Créons ensemble</span>
         <img src="Work - Truus/téléchargement (3).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Photo Food</span>
+        <span class="marquee-text is--fraunces">Photo Food</span>
         <img src="Work - Truus/téléchargement (4).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Strasbourg</span>
+        <span class="marquee-text is--italic">Strasbourg</span>
         <img src="Work - Truus/téléchargement (5).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Créons ensemble</span>
+        <span class="marquee-text is--fraunces">Créons ensemble</span>
         <img src="Work - Truus/téléchargement.svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Photo Food</span>
+        <span class="marquee-text is--italic">Photo Food</span>
         <img src="Work - Truus/téléchargement (1).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Strasbourg</span>
+        <span class="marquee-text is--fraunces">Strasbourg</span>
         <img src="Work - Truus/téléchargement (2).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Créons ensemble</span>
+        <span class="marquee-text is--italic">Créons ensemble</span>
         <img src="Work - Truus/téléchargement (3).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Photo Food</span>
+        <span class="marquee-text is--fraunces">Photo Food</span>
         <img src="Work - Truus/téléchargement (4).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Strasbourg</span>
+        <span class="marquee-text is--italic">Strasbourg</span>
         <img src="Work - Truus/téléchargement (5).svg" alt="" class="marquee-sticker" aria-hidden="true">
       </div>
     </div>
@@ -1174,29 +1205,29 @@
     <!-- Band 2 - Scrolling right -->
     <div class="marquee-band marquee-band-2">
       <div class="marquee-content">
-        <span class="marquee-text">Créons ensemble</span>
+        <span class="marquee-text is--fraunces">Créons ensemble</span>
         <img src="Work - Truus/téléchargement (5).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Photo Food</span>
+        <span class="marquee-text is--italic">Photo Food</span>
         <img src="Work - Truus/téléchargement (4).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Strasbourg</span>
+        <span class="marquee-text is--fraunces">Strasbourg</span>
         <img src="Work - Truus/téléchargement (3).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Créons ensemble</span>
+        <span class="marquee-text is--italic">Créons ensemble</span>
         <img src="Work - Truus/téléchargement (2).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Photo Food</span>
+        <span class="marquee-text is--fraunces">Photo Food</span>
         <img src="Work - Truus/téléchargement (1).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Strasbourg</span>
+        <span class="marquee-text is--italic">Strasbourg</span>
         <img src="Work - Truus/téléchargement.svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Créons ensemble</span>
+        <span class="marquee-text is--fraunces">Créons ensemble</span>
         <img src="Work - Truus/téléchargement (5).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Photo Food</span>
+        <span class="marquee-text is--italic">Photo Food</span>
         <img src="Work - Truus/téléchargement (4).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Strasbourg</span>
+        <span class="marquee-text is--fraunces">Strasbourg</span>
         <img src="Work - Truus/téléchargement (3).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Créons ensemble</span>
+        <span class="marquee-text is--italic">Créons ensemble</span>
         <img src="Work - Truus/téléchargement (2).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Photo Food</span>
+        <span class="marquee-text is--fraunces">Photo Food</span>
         <img src="Work - Truus/téléchargement (1).svg" alt="" class="marquee-sticker" aria-hidden="true">
-        <span class="marquee-text">Strasbourg</span>
+        <span class="marquee-text is--italic">Strasbourg</span>
         <img src="Work - Truus/téléchargement.svg" alt="" class="marquee-sticker" aria-hidden="true">
       </div>
     </div>
@@ -1206,6 +1237,17 @@
        FOOTER
        =========================================== -->
   <footer class="footer">
+    <!-- Physics Logos Container -->
+    <div class="footer-physics-container" id="footerPhysicsContainer">
+      <img src="assets/clients/bistro-polo.png" alt="Bistro Polo" class="footer-physics-logo" data-physics-logo>
+      <img src="assets/clients/logo-ace.png" alt="ACE" class="footer-physics-logo" data-physics-logo>
+      <img src="assets/clients/logo-entite-4.png" alt="Entité 4" class="footer-physics-logo" data-physics-logo>
+      <img src="assets/clients/Logo-Entite-7.png" alt="Entité 7" class="footer-physics-logo" data-physics-logo>
+      <img src="assets/clients/Logo-Entite-8.png" alt="Entité 8" class="footer-physics-logo" data-physics-logo>
+      <img src="assets/clients/Logo-Entite-11.png" alt="Entité 11" class="footer-physics-logo" data-physics-logo>
+      <img src="assets/clients/ica-small.png" alt="ICA" class="footer-physics-logo" data-physics-logo>
+      <img src="assets/clients/lafraichtouch-allemagne.png" alt="La Fraîch Touch" class="footer-physics-logo" data-physics-logo>
+    </div>
     <div class="footer-content">
       <!-- CTA Section -->
       <div class="footer-cta">
@@ -1229,7 +1271,7 @@
           <div class="footer-column">
             <h3>Explorer</h3>
             <div class="footer-links">
-              <a href="#projets" class="footer-link">Projets</a>
+              <a href="#projets" class="footer-link" id="footerProjets" data-preview="true">Projets</a>
               <a href="#about" class="footer-link">Agence</a>
               <a href="#services" class="footer-link">Services</a>
             </div>
@@ -1257,10 +1299,9 @@
         <div class="footer-legal">
           <a href="#" class="footer-legal-link">Mentions légales</a>
         </div>
-        <div class="footer-status">
-          <span class="footer-status-dot"></span>
-          Nous acceptons de nouveaux clients
-        </div>
+        <a href="https://pixel-drop.com" target="_blank" rel="noopener" class="footer-legal-link footer-pixeldrop">
+          <img src="assets/logo/logo-pixel-drop.svg" alt="Pixel Drop" class="footer-pixeldrop-logo"> Pixel Drop
+        </a>
       </div>
     </div>
   </footer>
@@ -1280,29 +1321,29 @@
   </div>
   <div class="cursor-label" id="cursorLabel">glisser</div>
 
-  <!-- Nav Preview Stack (at body level for fixed positioning) -->
-  <div class="nav-preview-stack" id="navPreviewStack">
-    <img src="assets/team/food/food-1.jpg" alt="" class="nav-preview-img">
-    <img src="assets/team/food/food-2.jpg" alt="" class="nav-preview-img">
-    <img src="assets/team/food/food-3.jpg" alt="" class="nav-preview-img">
-    <img src="assets/team/food/food-4.jpg" alt="" class="nav-preview-img">
-    <img src="assets/team/food/food-5.jpg" alt="" class="nav-preview-img">
-    <img src="assets/team/food/food-6.jpg" alt="" class="nav-preview-img">
-    <img src="assets/team/food/food-7.jpg" alt="" class="nav-preview-img">
-    <img src="assets/team/food/food-8.jpg" alt="" class="nav-preview-img">
+  <!-- Flick Preview Stack (at body level for fixed positioning) -->
+  <div class="flick-preview-stack" id="flickPreviewStack">
+    <img src="assets/images/projects/alelor-thumb.jpg" alt="" class="flick-preview-img">
+    <img src="assets/images/projects/dazio-thumb.jpg" alt="" class="flick-preview-img">
+    <img src="assets/images/projects/july-thumbnail.jpg" alt="" class="flick-preview-img">
+    <img src="assets/images/projects/mamabubbele-thumb.jpg" alt="" class="flick-preview-img">
+    <img src="assets/images/projects/oklahoma-thumb.png" alt="" class="flick-preview-img">
+    <img src="assets/images/projects/toastiversaire-thumb.jpg" alt="" class="flick-preview-img">
   </div>
 
   <script src="js/cursor.js"></script>
   <script src="js/hero.js"></script>
-  <script src="js/nav-preview.js"></script>
   <script src="js/services-carousel.js"></script>
   <script src="js/services-slideshow.js"></script>
   <script src="js/team.js"></script>
   <script src="js/future.js"></script>
   <script src="js/flick.js"></script>
+  <script src="js/flick-preview.js"></script>
   <script src="js/testimonials-cards.js"></script>
   <script src="js/clients-marquee.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/footer-physics.js"></script>
+  <script src="js/fullwidth-slideshow.js"></script>
 
   <!-- Dynamic Year Script -->
   <script>

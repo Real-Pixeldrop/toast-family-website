@@ -17,7 +17,8 @@
       "Bash(for:*)",
       "Bash(do mv \"$f\" \"../assets/team/food/\")",
       "Bash(done)",
-      "Bash(git push origin main)"
+      "Bash(git push origin main)",
+      "Bash(open:*)"
     ],
     "deny": [],
     "ask": []

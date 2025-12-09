@@ -6,7 +6,7 @@
 /* ------------------------- Section Container -------------------------------------------------- */
 
 .testimonials-truus {
-  padding-top: var(--section-padding, 8em);
+  padding-top: 4em;
   padding-bottom: var(--section-padding, 8em);
   background-color: #F0EBE7;
   color: #000;
@@ -28,19 +28,35 @@
 
 .testimonials-truus__col-title h2 {
   font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
+  font-weight: 800;
   margin: 0;
   line-height: 1.1;
 }
 
 .testimonials-truus__col-title h2 em {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
   font-style: italic;
   font-weight: 400;
 }
 
 .testimonials-truus__line-svg {
-  width: 10em;
-  margin-top: 0.5em;
+  width: 100%;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+}
+
+.testimonials-truus__line-svg path {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  transition: stroke-dashoffset 1s ease-out 0.3s;
+}
+
+/* Draw animation when visible */
+.testimonials-truus [data-scroll-reveal="title"].is-visible .testimonials-truus__line-svg path {
+  stroke-dashoffset: 0;
 }
 
 /* ------------------------- Cards Row -------------------------------------------------- */

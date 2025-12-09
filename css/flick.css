@@ -16,15 +16,76 @@
 .flick {
   padding: 6px 12px 12px 12px;
   overflow: hidden;
+  position: relative;
 }
 
 .flick__tile {
+  position: relative;
   padding-top: var(--section-padding, 12em);
   padding-bottom: 1em;
   background-color: var(--color-dark, black);
   color: var(--color-light, #F0EBE7);
   border-radius: 16px;
   overflow: hidden;
+}
+
+/* Grain Background */
+.flick__tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/textures/grain.gif');
+  background-size: 200px;
+  background-repeat: repeat;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 16px;
+}
+
+/* Dark Overlay */
+.flick__tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 16px;
+}
+
+/* Ensure content is above grain */
+.flick__tile > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* ------------------------- Section Title -------------------------------------------------- */
+
+.flick__row-title {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.flick__heading {
+  font-size: 4em;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-light, #F0EBE7);
+  margin: 0;
+}
+
+.flick__heading em {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ------------------------- Spacer -------------------------------------------------- */
+
+.flick__spacer {
+  height: 8em;
 }
 
 .flick__row-slider {
@@ -132,8 +193,8 @@
   opacity: 1;
 }
 
-/* Hide poster image when video is playing */
-[data-flick-cards-item-status="active"] .flick-card__poster {
+/* Hide poster image when video is playing (only if video exists) */
+[data-flick-cards-item-status="active"] .flick-card__media:has(.flick-card__video) .flick-card__poster {
   opacity: 0;
 }
 
@@ -270,9 +331,21 @@
   color: var(--color-light, #F0EBE7);
 }
 
-/* Line draw animation */
+/* Line draw animation - auto draw on load */
+@keyframes drawScribble {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 .flick-group__blob-scribble-svg path {
-  transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 0;
+  animation: drawScribble 1.5s ease-out forwards;
+  animation-delay: 0.5s;
 }
 
 /* ------------------------- Bottom Info -------------------------------------------------- */
@@ -310,6 +383,7 @@
 
 .flick-info-item__bottom {
   flex: none;
+  position: relative;
 }
 
 .link-cta {
@@ -320,6 +394,51 @@
   font-weight: 500;
   transition: opacity 0.3s ease;
 }
+
+/* ------------------------- Preview Stack (Voir tous les projets hover) -------------------------------------------------- */
+
+.flick-preview-stack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 120px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 9999;
+  transition: opacity 0.2s ease;
+}
+
+.flick-preview-stack.is-visible {
+  opacity: 1;
+}
+
+.flick-preview-img {
+  position: absolute;
+  width: 90px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: rotate(0deg) scale(0.8);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  border: 3px solid var(--color-light, #F0EBE7);
+}
+
+.flick-preview-img.is-active {
+  opacity: 1;
+  transform: rotate(var(--rotation, 0deg)) scale(1);
+  z-index: var(--z-index, 1);
+}
+
+/* Stacked effect - each image gets slight rotation */
+.flick-preview-img:nth-child(1) { --rotation: -10deg; }
+.flick-preview-img:nth-child(2) { --rotation: 6deg; }
+.flick-preview-img:nth-child(3) { --rotation: -4deg; }
+.flick-preview-img:nth-child(4) { --rotation: 8deg; }
+.flick-preview-img:nth-child(5) { --rotation: -7deg; }
+.flick-preview-img:nth-child(6) { --rotation: 5deg; }
 
 .link-cta:hover {
   opacity: 0.7;
@@ -365,16 +484,24 @@
   position: absolute;
   top: 0;
   left: 0;
-  cursor: url('../assets/cursors/cursor-drag.svg') 25 25, grab;
+  cursor: url('../assets/cursors/cursor-drag.svg') 12 0, grab;
 }
 
 [data-flick-drag-status="grabbing"] .flick-group__dragger {
-  cursor: url('../assets/cursors/cursor-dragging.svg') 25 25, grabbing;
+  cursor: url('../assets/cursors/cursor-dragging.svg') 12 0, grabbing;
 }
 
 /* ------------------------- RESPONSIVE -------------------------------------------------- */
 
 @media screen and (max-width: 991px) {
+  .flick__heading {
+    font-size: 3em;
+  }
+
+  .flick__spacer {
+    height: 6em;
+  }
+
   .flick-card {
     width: 18em;
   }
@@ -406,6 +533,14 @@
     padding-bottom: var(--section-padding, 6em);
   }
 
+  .flick__heading {
+    font-size: 2em;
+  }
+
+  .flick__spacer {
+    height: 4em;
+  }
+
   .flick-card {
     width: 14em;
   }
@@ -434,9 +569,22 @@
   .flick-info-item__h3 {
     font-size: 1.25em;
   }
+
+  /* Hide preview stack on mobile */
+  .flick-preview-stack {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 479px) {
+  .flick__heading {
+    font-size: 1.5em;
+  }
+
+  .flick__spacer {
+    height: 3em;
+  }
+
   .flick-card {
     width: 11em;
   }
@@ -460,4 +608,57 @@
   .flick-info-item__h3 {
     font-size: 1em;
   }
+}
+
+/* ===========================================
+   SCROLL REVEAL ANIMATIONS - Section Flick
+   =========================================== */
+
+/* État initial - Titre */
+.flick [data-scroll-reveal="title"] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.flick [data-scroll-reveal="title"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* État initial - Cartes (cascade avec effet éventail) */
+.flick [data-scroll-reveal="cards"] {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transition-delay: 0.2s;
+}
+
+.flick [data-scroll-reveal="cards"].is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* État initial - Blob (forme verte) - utilise scale séparé pour ne pas casser le positionnement */
+.flick [data-scroll-reveal="blob"] {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: 0.1s;
+}
+
+.flick [data-scroll-reveal="blob"].is-visible {
+  opacity: 1;
+}
+
+/* État initial - Bottom info (badge + lien) */
+.flick [data-scroll-reveal="info"] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: 0.5s;
+}
+
+.flick [data-scroll-reveal="info"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

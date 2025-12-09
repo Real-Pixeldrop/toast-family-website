@@ -51,8 +51,8 @@
 /* Team est maintenant à l'intérieur du flick__tile */
 .team {
   padding-top: 1em;
-  padding-bottom: var(--section-padding);
-  background-color: var(--color-dark);
+  padding-bottom: 4em;
+  background-color: transparent; /* Transparent pour laisser voir le grain du parent */
   color: var(--color-light);
   overflow: hidden;
 }
@@ -73,11 +73,10 @@
   font-size: 4em;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  text-transform: lowercase;
 }
 
 .team__col-text h2 em {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -276,7 +275,7 @@
 /* ------------------------- Lines -------------------------------------------------- */
 
 .team-grid__line-1-svg {
-  z-index: 5;
+  z-index: 3;
   width: 17.625em;
   position: absolute;
   top: 23%;
@@ -318,24 +317,56 @@
   z-index: 1;
 }
 
+/* ------------------------- Title Typography Variations -------------------------------------------------- */
+
+.team__col-text h2 em {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.team__col-text h2 .is--light {
+  font-weight: 300;
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+}
+
 /* ------------------------- Circle & Line SVG in Title -------------------------------------------------- */
 
 .team__h2-circle-svg {
-  width: 100%;
+  width: 130%;
+  height: auto;
   position: absolute;
-  top: 55%;
-  left: 44%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+}
+
+.team__h2-circle-svg path {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  transition: stroke-dashoffset 1s ease-out;
 }
 
 .team__h2-line-svg {
   width: 100%;
   position: absolute;
-  top: 110%;
+  top: 95%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   pointer-events: none;
+}
+
+.team__h2-line-svg path {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  transition: stroke-dashoffset 1s ease-out 0.3s;
+}
+
+/* Draw animation when parent is visible */
+.team [data-scroll-reveal="title"].is-visible .team__h2-circle-svg path,
+.team [data-scroll-reveal="title"].is-visible .team__h2-line-svg path {
+  stroke-dashoffset: 0;
 }
 
 /* ------------------------- RESPONSIVE -------------------------------------------------- */

@@ -80,6 +80,17 @@ heroInner.addEventListener('mousemove', (e) => {
     return;
   }
 
+  // Hide sound toggle when cursor is in bottom-right zone (near video controls)
+  const heroRect = heroInner.getBoundingClientRect();
+  const cursorX = e.clientX - heroRect.left;
+  const cursorY = e.clientY - heroRect.top;
+  const isNearControls = cursorX > heroRect.width - 250 && cursorY > heroRect.height - 150;
+
+  if (isNearControls) {
+    soundToggle.classList.remove('is-visible');
+    return;
+  }
+
   updateSoundTogglePosition(e);
   showSoundToggle();
 });

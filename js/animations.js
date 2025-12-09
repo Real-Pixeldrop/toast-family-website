@@ -127,7 +127,7 @@
      =========================================== */
 
   function initLineDrawAnimations() {
-    const lineElements = document.querySelectorAll('[data-line-draw], .services-truus__line-svg path, .clients-truus__line-svg path, .clients-truus__arrow-svg path, .services-truus-card__line-svg path, .flick-group__blob-scribble-svg path');
+    const lineElements = document.querySelectorAll('[data-line-draw], .services-truus__line-svg path, .clients-truus__line-svg path, .clients-truus__arrow-svg path, .services-truus-card__line-svg path');
 
     lineElements.forEach(path => {
       // Get path length
@@ -266,6 +266,144 @@
   }
 
   /* ===========================================
+     6. STRETCH WORD - Lettres qui s'ajoutent au scroll (smooth)
+     =========================================== */
+
+  function initStretchWord() {
+    const stretchElements = document.querySelectorAll('.stretch-word');
+
+    stretchElements.forEach(el => {
+      const base = el.dataset.base;       // "ado"
+      const letter = el.dataset.letter;   // "o"
+      const end = el.dataset.end;         // "rent"
+      const maxLetters = parseInt(el.dataset.max) || 5;
+
+      let currentCount = 1;
+      let targetCount = 1;
+      let isInView = false;
+      let sectionTop = 0;
+      let sectionHeight = 0;
+
+      // Create wrapper for each letter with individual animation
+      function createLetterSpans() {
+        el.innerHTML = '';
+
+        // Base text (before repeated letter)
+        const baseSpan = document.createElement('span');
+        baseSpan.textContent = base;
+        el.appendChild(baseSpan);
+
+        // Create spans for each possible repeated letter
+        for (let i = 0; i < maxLetters; i++) {
+          const letterSpan = document.createElement('span');
+          letterSpan.className = 'stretch-letter';
+          letterSpan.textContent = letter;
+          letterSpan.style.cssText = `
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: text-bottom;
+            position: relative;
+            top: -4px;
+            width: ${i === 0 ? 'auto' : '0'};
+            opacity: ${i === 0 ? 1 : 0};
+            transition: opacity 0.3s ease, width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+          `;
+          letterSpan.dataset.index = i;
+          el.appendChild(letterSpan);
+        }
+
+        // End text
+        const endSpan = document.createElement('span');
+        endSpan.textContent = end;
+        el.appendChild(endSpan);
+      }
+
+      createLetterSpans();
+
+      // Get section bounds
+      const section = el.closest('section') || el.closest('.testimonials-truus');
+      const updateBounds = () => {
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          sectionTop = window.scrollY + rect.top;
+          sectionHeight = rect.height;
+        }
+      };
+
+      updateBounds();
+      window.addEventListener('resize', updateBounds);
+      // Recalculate on page show (back/forward navigation)
+      window.addEventListener('pageshow', updateBounds);
+      // Also recalculate after a short delay for page restore
+      window.addEventListener('load', () => setTimeout(updateBounds, 100));
+
+      // Observer to track visibility
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isInView = entry.isIntersecting;
+          // Recalculate bounds when entering view
+          if (isInView) updateBounds();
+        });
+      }, { threshold: 0.1 });
+
+      observer.observe(el);
+
+      // Update letters visibility based on scroll progress
+      function updateLetters() {
+        if (!isInView || !sectionHeight) return;
+
+        // Calculate scroll progress within section (0 to 1)
+        const scrollY = window.scrollY;
+        const progress = Math.max(0, Math.min(1, (scrollY - sectionTop + window.innerHeight * 0.5) / (sectionHeight * 0.5)));
+
+        // Map progress to letter count (1 to maxLetters)
+        targetCount = Math.floor(1 + progress * (maxLetters - 1));
+        targetCount = Math.max(1, Math.min(maxLetters, targetCount));
+
+        // Update each letter span
+        const letterSpans = el.querySelectorAll('.stretch-letter');
+        letterSpans.forEach((span, index) => {
+          const shouldShow = index < targetCount;
+          // Get natural width of the letter on first show
+          if (shouldShow && !span.dataset.naturalWidth) {
+            span.style.width = 'auto';
+            span.dataset.naturalWidth = span.offsetWidth + 'px';
+          }
+          span.style.width = shouldShow ? (span.dataset.naturalWidth || 'auto') : '0';
+          span.style.opacity = shouldShow ? 1 : 0;
+        });
+
+        currentCount = targetCount;
+      }
+
+      // Throttled scroll handler
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            updateLetters();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+
+      // Force update on page show (back/forward navigation)
+      window.addEventListener('pageshow', () => {
+        setTimeout(() => {
+          updateBounds();
+          updateLetters();
+        }, 50);
+      });
+
+      // Initial update
+      setTimeout(updateLetters, 100);
+    });
+
+    console.log('Stretch word initialized on', stretchElements.length, 'elements');
+  }
+
+  /* ===========================================
      INIT ALL ANIMATIONS
      =========================================== */
 
@@ -282,6 +420,7 @@
     initLineDrawAnimations();
     initTextReveal();
     initScrollRevealBidirectional();
+    initStretchWord();
     console.log('All micro-animations initialized');
   }
 

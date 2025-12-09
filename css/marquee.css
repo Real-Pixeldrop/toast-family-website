@@ -28,8 +28,8 @@
   height: 100px; /* Reduced height to fit within section */
   background: #111;
   overflow: hidden;
-  border-top: 2px solid rgba(255, 107, 53, 0.15);
-  border-bottom: 2px solid rgba(255, 107, 53, 0.15);
+  border-top: 2px solid #F0EBE7;
+  border-bottom: 2px solid #F0EBE7;
   display: flex;
   align-items: center;
   pointer-events: auto; /* Re-enable pointer events on bands */
@@ -66,14 +66,28 @@
 }
 
 .marquee-text {
-  font-size: clamp(24px, 3vw, 38px); /* Bigger text for thicker bands */
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #FF6B35;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: none;
+  color: #F0EBE7;
   white-space: nowrap;
-  padding: 0 30px;
+  padding: 0 12px;
   display: inline-block;
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+}
+
+/* Alternance des polices avec classes - Fraunces bold et italic */
+.marquee-text.is--fraunces {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.marquee-text.is--italic {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .marquee-sticker {
@@ -81,7 +95,7 @@
   width: auto;
   display: inline-block;
   vertical-align: middle;
-  margin: 0 16px;
+  margin: 0 8px;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
   animation: floatSticker 3s ease-in-out infinite;
 }
@@ -167,7 +181,7 @@
   }
 
   .marquee-text {
-    padding: 0 40px;
+    padding: 0 10px;
   }
 }
 
@@ -187,12 +201,12 @@
 
   .marquee-text {
     font-size: clamp(18px, 4vw, 24px);
-    padding: 0 20px;
-    letter-spacing: 2px;
+    padding: 0 8px;
+    letter-spacing: 1px;
   }
 
   .marquee-sticker {
     height: 32px;
-    margin: 0 10px;
+    margin: 0 6px;
   }
 }

@@ -40,7 +40,7 @@
 .footer-content {
   position: relative;
   z-index: 3;
-  padding: 150px 60px 60px; /* Increased top padding from 100px to 150px */
+  padding: 150px 60px 12px;
   max-width: 1600px;
   margin: 0 auto;
 }
@@ -162,7 +162,7 @@
 .footer-grid {
   padding-bottom: 60px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 40px;
+  margin-bottom: 12px;
 }
 
 /* Footer Column */
@@ -262,6 +262,75 @@
 }
 
 /* ===========================================
+   Physics Logos - Draggable avec gravité
+   =========================================== */
+.footer-physics-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.footer-physics-logo {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+  transition: filter 0.2s ease;
+  will-change: transform;
+}
+
+.footer-physics-logo:active,
+.footer-physics-logo.is-dragging {
+  cursor: grabbing;
+}
+
+.footer-physics-logo:hover {
+  filter: drop-shadow(0 8px 20px rgba(255, 107, 53, 0.4));
+}
+
+.footer-physics-logo.is-dragging {
+  z-index: 100;
+  filter: drop-shadow(0 12px 30px rgba(255, 107, 53, 0.6));
+}
+
+/* Hover Tag - "lancez-moi !" */
+.footer-physics-tag {
+  position: fixed;
+  background: #FF6B35;
+  color: #fff;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: scale(0.8) translateY(5px);
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.footer-physics-tag.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Floor line indicator (la ligne du footer) */
+.footer-grid {
+  position: relative;
+}
+
+/* ===========================================
    Footer Bottom
    =========================================== */
 .footer-bottom {
@@ -309,32 +378,16 @@
   animation: circleDrawThrice 1.2s ease-out;
 }
 
-.footer-status {
-  display: flex;
+.footer-pixeldrop {
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  gap: 6px;
 }
 
-.footer-status-dot {
-  width: 8px;
-  height: 8px;
-  background: #FF6B35;
-  border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+.footer-pixeldrop-logo {
+  height: 14px;
+  width: auto;
+  vertical-align: middle;
 }
 
 /* ===========================================

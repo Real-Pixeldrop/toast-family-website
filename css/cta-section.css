@@ -1,0 +1,196 @@
+/* ===========================================
+   CTA SECTION - Simple boxed style
+   Cohérent avec le reste du site (flick, etc.)
+   =========================================== */
+
+/* ------------------------- Section Container -------------------------------------------------- */
+
+.cta-boxed {
+  padding: 6px 12px 12px 12px;
+  background: #F0EBE7;
+}
+
+.cta-boxed__tile {
+  position: relative;
+  min-height: 70vh;
+  background-color: var(--color-dark, black);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------------------------- Background Image -------------------------------------------------- */
+
+.cta-boxed__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%);
+  opacity: 0.4;
+}
+
+.cta-boxed__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+  pointer-events: none;
+}
+
+/* ------------------------- Content -------------------------------------------------- */
+
+.cta-boxed__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  padding: 4em 2em;
+}
+
+/* ------------------------- Title -------------------------------------------------- */
+
+.cta-boxed__title-wrap {
+  position: relative;
+}
+
+.cta-boxed__title {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-light, #F0EBE7);
+  margin: 0;
+}
+
+.cta-boxed__title em {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ------------------------- Button -------------------------------------------------- */
+
+.cta-boxed__btn {
+  display: inline-block;
+  padding: 1em 2.5em;
+  background: #FF6B35;
+  color: #fff;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  border: 2px solid #FF6B35;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-boxed__btn:hover {
+  background: transparent;
+  color: #FF6B35;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+/* ------------------------- Sticker -------------------------------------------------- */
+
+.cta-boxed__sticker {
+  position: absolute;
+  width: clamp(60px, 10vw, 100px);
+  height: auto;
+  bottom: 15%;
+  right: 10%;
+  animation: stickerFloat 3s ease-in-out infinite;
+}
+
+@keyframes stickerFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+/* ------------------------- Scroll Reveal Animations -------------------------------------------------- */
+
+.cta-boxed [data-scroll-reveal="title"] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.cta-boxed [data-scroll-reveal="title"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-boxed [data-scroll-reveal="sticker"] {
+  opacity: 0;
+  transform: scale(0.5) rotate(-15deg);
+  transition: opacity 0.5s ease 0.3s, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s;
+}
+
+.cta-boxed [data-scroll-reveal="sticker"].is-visible {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* ------------------------- RESPONSIVE -------------------------------------------------- */
+
+@media screen and (max-width: 991px) {
+  .cta-boxed__tile {
+    min-height: 60vh;
+  }
+
+  .cta-boxed__sticker {
+    width: clamp(50px, 12vw, 80px);
+    right: 5%;
+    bottom: 10%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cta-boxed {
+    padding: 6px 12px;
+  }
+
+  .cta-boxed__tile {
+    min-height: 50vh;
+  }
+
+  .cta-boxed__content {
+    gap: 1.5em;
+    padding: 3em 1.5em;
+  }
+
+  .cta-boxed__btn {
+    font-size: 0.9rem;
+    padding: 0.875em 2em;
+  }
+
+  .cta-boxed__sticker {
+    width: 50px;
+    right: 5%;
+    bottom: 8%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .cta-boxed__tile {
+    min-height: 45vh;
+  }
+
+  .cta-boxed__sticker {
+    width: 40px;
+    display: none;
+  }
+}
